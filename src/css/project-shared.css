@@ -156,6 +156,16 @@
   padding-left: 0;
 }
 
+/*text-only pages (privacy) have no hero image, so clear the fixed navbar (top 12px + height 64px) directly*/
+.legal_section {
+  padding-top: calc(12px + 64px + var(--space-2xl));
+}
+
+/*inline links in running text need more than color to stand out (WCAG 1.4.1)*/
+.legal_section .body a {
+  text-decoration: underline;
+}
+
 /*full-width autoplay/loop video showcase, between description and photo sections*/
 .video_project_section {
   padding-inline: var(--space-3xl);

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") === "dark" ? "dark" : "light");</script>
+    <script>try { document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") === "dark" ? "dark" : "light"); } catch (e) {}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
@@ -75,7 +75,7 @@
       <aside class="social-links" aria-label="Social media links">
         <a
           href="https://www.linkedin.com/in/irina-c-901251205/"
-          target="_blank"
+          target="_blank" rel="noopener noreferrer"
         >
           <img
             src="public/assets/images/buttonLinkedin-default.png"
@@ -206,17 +206,17 @@
                   <p>
                     I am grateful for the hands-on experience I gained at <a
                       href="https://www.Usaneers.de/"
-                      target="_blank"
+                      target="_blank" rel="noopener noreferrer"
                       class="logo_hover_link Usaneers_link"
                       ><u>Usaneers</u></a
                     >.      
                     Currently, I am extending my UX and React
                     programming skills as a working student at
-                    <a href="https://monacofriends.com/" target="_blank" class="logo_hover_link monacofriends_link"
+                    <a href="https://monacofriends.com/" target="_blank" rel="noopener noreferrer" class="logo_hover_link monacofriends_link"
                       ><u>Monaco Friends</u></a
                     > and a mentor at <a
                       href="https://de.linkedin.com/company/tudesign-student-club"
-                      target="_blank"
+                      target="_blank" rel="noopener noreferrer"
                       class="logo_hover_link tudesign_link"
                       ><u>TUDesign</u></a
                     > student club.

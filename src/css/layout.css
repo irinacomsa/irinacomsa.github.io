@@ -1278,6 +1278,20 @@ html.touch .project_image img {
   color: var(--white);
 }
 
+/*own line under the copyright so it never wraps mid-row with an indent on mobile*/
+.footer_home_legal_link {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-xs);
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/*same reason as .footer_home_email:hover*/
+.footer_home_legal_link:hover {
+  color: var(--hover-color);
+}
+
 .footer_home_bottom {
   display: flex;
   justify-content: space-between;

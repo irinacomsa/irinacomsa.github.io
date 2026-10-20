@@ -10,12 +10,16 @@
       heading: "You've hit the footer, thanks for stopping by!",
       sub: 'Feel free to reach out for collaborations, questions or just a friendly hello.',
       copyright: 'Copyright 2026 Irina Comsa. All rights reserved.',
+      privacy: 'Privacy Notice',
+      privacyHref: 'privacy.html',
       backToTop: 'Back to Top',
     },
     de: {
       heading: 'Du hast den Footer erreicht, danke fürs Vorbeischauen!',
       sub: 'Melde dich gerne für Kooperationen, Fragen oder einfach nur zum Hallosagen.',
       copyright: 'Copyright 2026 Irina Comsa. Alle Rechte vorbehalten.',
+      privacy: 'Datenschutz',
+      privacyHref: 'privacy.de.html',
       backToTop: 'Nach oben',
     },
   };
@@ -39,7 +43,10 @@
         </div>
 
         <div class="footer_home_bottom">
-          <p class="footer_home_copyright">${t.copyright}</p>
+          <p class="footer_home_copyright">
+            ${t.copyright}
+            <a href="${t.privacyHref}" class="footer_home_legal_link">${t.privacy}</a>
+          </p>
           <a href="#hero" class="footer_home_backtotop" aria-label="${t.backToTop}">
             <span class="footer_home_backtotop_label">${t.backToTop}</span>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

@@ -84,14 +84,24 @@
 
     //theme lives on <html data-theme>, keyed by CSS via html[data-theme]; same localStorage pattern as accessibility.js
     const THEME_KEY = 'theme';
+    //storage can throw when blocked (privacy settings); the toggle still works, it just won't persist
+    const loadTheme = () => {
+      try {
+        return localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
+      } catch (e) {
+        return 'light';
+      }
+    };
     const applyTheme = (theme) => {
       document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem(THEME_KEY, theme);
+      try {
+        localStorage.setItem(THEME_KEY, theme);
+      } catch (e) {}
     };
 
     const themeToggle = document.querySelector('.theme_toggle');
     if (themeToggle) {
-      let theme = localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
+      let theme = loadTheme();
       const render = () => { themeToggle.innerHTML = theme === 'dark' ? MOON_ICON : SUN_ICON; };
       applyTheme(theme);
       render();

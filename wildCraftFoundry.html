@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") === "dark" ? "dark" : "light");</script>
+    <script>try { document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") === "dark" ? "dark" : "light"); } catch (e) {}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Portfolio of Irina Comsa: an e-commerce platform for 3D models, designed and prototyped in Figma.">
     <meta name="google-site-verification" content="HTfGTt3uIeofMBIrG480G_uW8pSm6BpFvpTYmr-GXTo" />
@@ -56,7 +56,7 @@
 
     <!--  SOCIAL LINKS  -->
     <aside class="social-links" aria-label="Social media links">
-      <a href="https://www.linkedin.com/in/irina-c-901251205/" target="_blank">
+      <a href="https://www.linkedin.com/in/irina-c-901251205/" target="_blank" rel="noopener noreferrer">
         <img src="public/assets/images/buttonLinkedin-default.png" class="buttonLinkedin-default" alt="LinkedIn" />
         <img src="public/assets/images/buttonLinkedin-hovered.png" class="buttonLinkedin-hovered" alt="" aria-hidden="true" />
       </a>
