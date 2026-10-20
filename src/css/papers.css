@@ -26,6 +26,10 @@
   align-items: start;
 }
 
+.paper_preview_wrap {
+  position: relative;
+}
+
 .paper_preview {
   display: flex;
   flex-direction: column;
@@ -49,6 +53,69 @@
   width: 100%;
   height: auto;
   border-radius: 2px;
+}
+
+.paper_loupe_toggle {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.paper_loupe_toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/*same states as .btn-primary; pressed inverts so "on" is clearly visible*/
+.paper_loupe_toggle:hover {
+  background-color: var(--hover-color);
+  border-color: var(--hover-color);
+  color: var(--secondary-color);
+}
+
+.paper_loupe_toggle[aria-pressed="true"] {
+  background-color: var(--white);
+  color: var(--secondary-color);
+}
+
+.paper_loupe_toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/*desktop only*/
+@media (hover: none), (pointer: coarse) {
+  .paper_loupe_toggle {
+    display: none;
+  }
+}
+
+html.touch .paper_loupe_toggle {
+  display: none;
+}
+
+.paper_loupe {
+  position: fixed;
+  z-index: 1050;
+  height: 100px;
+  border-radius: 4px;
+  border: 1px solid var(--neutral-gray);
+  background-color: var(--white);
+  background-repeat: no-repeat;
+  background-origin: border-box; /*keeps the JS offsets exact despite the border*/
+  pointer-events: none;
 }
 
 .paper_text {
@@ -87,9 +154,12 @@
     gap: var(--space-lg);
   }
 
+  .paper_preview_wrap {
+    max-width: 480px;
+  }
+
   /*shorter, so a swipe can still scroll the page past it*/
   .paper_preview {
-    max-width: 480px;
     height: min(55vh, 480px);
   }
 }
