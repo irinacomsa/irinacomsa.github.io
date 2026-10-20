@@ -340,6 +340,7 @@ window.addEventListener('DOMContentLoaded', () => {
             posX = targetX;
             posY = targetY;
             cursor.classList.add('custom_cursor--visible');
+            onHover(e); //pointer may already be on a card
         }
     }
 
@@ -363,20 +364,25 @@ window.addEventListener('DOMContentLoaded', () => {
         rafId = requestAnimationFrame(loop);
     }
 
+    //derived from the hovered element, so it can't get stuck
     const hoverSelector = 'a, button, [data-cursor-icon]';
-    function onHoverIn(e) {
-        if (!active) return;
-        if (e.target.closest('[data-cursor-icon]')) cursor.classList.add('custom_cursor--icon');
-        else if (e.target.closest(hoverSelector)) cursor.classList.add('custom_cursor--pointer');
-    }
-    function onHoverOut(e) {
-        if (active && e.target.closest(hoverSelector)) cursor.classList.remove('custom_cursor--pointer', 'custom_cursor--icon');
+    function onHover(e) {
+        if (!active || !(e.target instanceof Element)) return;
+        const isIcon = !!e.target.closest('[data-cursor-icon]');
+        cursor.classList.toggle('custom_cursor--icon', isIcon);
+        cursor.classList.toggle('custom_cursor--pointer', !isIcon && !!e.target.closest(hoverSelector));
     }
     function onMouseDown() {
         if (active) cursor.classList.add('custom_cursor--active');
     }
     function onMouseUp() {
         if (active) cursor.classList.remove('custom_cursor--active');
+    }
+
+    //new tab (blur) or bfcache return skip mouseout/mouseup and left the arrow stuck
+    function resetInteraction() {
+        hasMoved = false;
+        cursor.classList.remove('custom_cursor--visible', 'custom_cursor--pointer', 'custom_cursor--icon', 'custom_cursor--active');
     }
 
     function activate() {
@@ -394,9 +400,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function deactivate() {
         if (!active) return;
         active = false;
-        hasMoved = false;
+        resetInteraction();
         root.classList.remove('custom-cursor-active');
-        cursor.classList.remove('custom_cursor--visible', 'custom_cursor--pointer', 'custom_cursor--icon', 'custom_cursor--active');
         document.removeEventListener('mousemove', onMouseMove);
         document.documentElement.removeEventListener('mouseleave', onMouseLeaveWindow);
         document.documentElement.removeEventListener('mouseenter', onMouseEnterWindow);
@@ -409,8 +414,11 @@ window.addEventListener('DOMContentLoaded', () => {
         if (isEligible()) activate(); else deactivate();
     }
 
-    document.addEventListener('mouseover', onHoverIn);
-    document.addEventListener('mouseout', onHoverOut);
+    document.addEventListener('mouseover', onHover);
+    window.addEventListener('blur', resetInteraction);
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted) resetInteraction();
+    });
 
     sync();
     new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['class'] });
