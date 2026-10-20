@@ -68,50 +68,49 @@
     <!-- NAVBAR -->
     <div data-navbar data-home-href="#hero"></div>
 
-    <div class="main_wrapper">
-      <!-- MAIN WRAPPER contains everything except footer -->
+    <!--  SOCIAL LINKS  -->
+    <aside class="social-links" aria-label="Social media links">
+      <a
+        href="https://www.linkedin.com/in/irina-c-901251205/"
+        target="_blank" rel="noopener noreferrer"
+      >
+        <img
+          src="public/assets/images/buttonLinkedin-default.png"
+          class="buttonLinkedin-default"
+          alt="LinkedIn"
+        />
+        <img
+          src="public/assets/images/buttonLinkedin-hovered.png"
+          class="buttonLinkedin-hovered"
+          alt=""
+          aria-hidden="true"
+        />
+      </a>
+      <a
+        href="mailto:irinacomsa28@gmail.com"
+      >
+        <img
+          src="public/assets/images/buttonEmail-default.png"
+          class="buttonEmail-default"
+          alt="Email"
+        />
+        <img
+          src="public/assets/images/buttonEmail-hovered.png"
+          class="buttonEmail-hovered"
+          alt=""
+          aria-hidden="true"
+        />
+      </a>
+      <!-- accessibility_button: a real flex child here so it inherits the same
+        gap/alignment as the LinkedIn/Email icons above it -->
+      <div data-accessibility-trigger></div>
+    </aside>
 
-      <!--  SOCIAL LINKS  -->
-      <aside class="social-links" aria-label="Social media links">
-        <a
-          href="https://www.linkedin.com/in/irina-c-901251205/"
-          target="_blank" rel="noopener noreferrer"
-        >
-          <img
-            src="public/assets/images/buttonLinkedin-default.png"
-            class="buttonLinkedin-default"
-            alt="LinkedIn"
-          />
-          <img
-            src="public/assets/images/buttonLinkedin-hovered.png"
-            class="buttonLinkedin-hovered"
-            alt=""
-            aria-hidden="true"
-          />
-        </a>
-        <a
-          href="mailto:irinacomsa28@gmail.com"
-        >
-          <img
-            src="public/assets/images/buttonEmail-default.png"
-            class="buttonEmail-default"
-            alt="Email"
-          />
-          <img
-            src="public/assets/images/buttonEmail-hovered.png"
-            class="buttonEmail-hovered"
-            alt=""
-            aria-hidden="true"
-          />
-        </a>
-        <!-- accessibility_button: a real flex child here so it inherits the same
-          gap/alignment as the LinkedIn/Email icons above it -->
-        <div data-accessibility-trigger></div>
-      </aside>
+    <!-- accessibility dialog + color-vision SVG filters + reading-focus overlay —
+      page-level, not part of the social-links layout -->
+    <div data-accessibility-panel></div>
 
-      <!-- accessibility dialog + color-vision SVG filters + reading-focus overlay —
-        page-level, not part of the social-links layout -->
-      <div data-accessibility-panel></div>
+    <main class="main_wrapper"> <!-- MAIN WRAPPER contains everything except footer -->
 
       <!-- wrapped so About's sticky cover-hero effect doesn't extend into Projects -->
       <div class="hero_about_stack">
@@ -123,10 +122,10 @@
                   <span class="visually-hidden">Hello, I'm Irina. I design thoughtful digital experiences and bring them to life with code.</span>
                   <span aria-hidden="true">Hello, I'm Irina. I <span class="typewriter" data-typewriter-phrases='["design thoughtful digital experiences and bring them to life with code.", "care about privacy, security and human touch during this AI wave.", "think accessibility is often neglected.",  "think AI software still needs human judgment."]'></span></span>
                 </h1>
-                <h4>
+                <p class="subtitle">
                   Master's student in Informatics with focus on HCI,<br />
                   working across UX & Software Engineering
-                </h4>
+                </p>
 
                 <div class="hero_buttons">
                   <a
@@ -231,55 +230,55 @@
                   <h3>Skills & Tools</h3>
                   <ul class="skillsGrid">
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/figma.png" alt="Figma" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/figma.png" alt="" /></span>
                       <p class="skill_name">Figma</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/react.png" alt="React JS" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/react.png" alt="" /></span>
                       <p class="skill_name">React JS</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/nextjs.svg" alt="Next.js" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/nextjs.svg" alt="" /></span>
                       <p class="skill_name">Next.js</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/javascript.svg" alt="JavaScript" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/javascript.svg" alt="" /></span>
                       <p class="skill_name">JavaScript</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/ts_icon.png" alt="TypeScript" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/ts_icon.png" alt="" /></span>
                       <p class="skill_name">TypeScript</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/nodejs.svg" alt="Node.js" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/nodejs.svg" alt="" /></span>
                       <p class="skill_name">Node.js</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/python.svg" alt="Python" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/python.svg" alt="" /></span>
                       <p class="skill_name">Python</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/git.png" alt="Git" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/git.png" alt="" /></span>
                       <p class="skill_name">Git</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/unity.png" alt="Unity" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/unity.png" alt="" /></span>
                       <p class="skill_name">Unity (C#)</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/photoshop.png" alt="Photoshop" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/photoshop.png" alt="" /></span>
                       <p class="skill_name">Photoshop</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/afterEffects.png" alt="After Effects" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/afterEffects.png" alt="" /></span>
                       <p class="skill_name">After Effects</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/illustrator.png" alt="Illustrator" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/illustrator.png" alt="" /></span>
                       <p class="skill_name">Illustrator</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/blender.png" alt="Blender" /></span>
+                      <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/blender.png" alt="" /></span>
                       <p class="skill_name">Blender</p>
                     </li>
                     <li class="skill_item">
@@ -291,11 +290,11 @@
                       <p class="skill_name">Automation Flows</p>
                     </li>
                     <li class="skill_item">
-                      <span class="skill_icon_box skill_icon_box--wide"><img class="skill_icon" src="public/assets/images/logos/strapi.png" alt="Strapi" /></span>
+                      <span class="skill_icon_box skill_icon_box--wide"><img class="skill_icon" src="public/assets/images/logos/strapi.png" alt="" /></span>
                       <p class="skill_name">Strapi</p>
                     </li>
                      <li class="skill_item">
-                      <span class="skill_icon_box skill_icon_box--wide"><img class="skill_icon" src="public/assets/images/logos/lovable.png" alt="Lovable" /></span>
+                      <span class="skill_icon_box skill_icon_box--wide"><img class="skill_icon" src="public/assets/images/logos/lovable.png" alt="" /></span>
                       <p class="skill_name">Lovable</p>
                     </li>
                   </ul>
@@ -488,10 +487,10 @@
             <div class="project_card">
               <div class="project_text">
                 <h2>Fintalo</h2>
-                <h4>
+                <p class="subtitle">
                   redesigning Fintalo's AI-native Fintech Platform along with my
                   team from TUDesign
-                </h4>
+                </p>
               </div>
 
               <a href="fintalo.html" class="project_image" data-cursor-icon="arrow">
@@ -511,10 +510,10 @@
             <div class="project_card">
               <div class="project_text">
                 <h2>Semantic Canvas</h2>
-                <h4>
+                <p class="subtitle">
                   Computational notebook extension built with 2 teammates for
                   the "Intelligent Systems" university practical
-                </h4>
+                </p>
               </div>
 
               <a href="semanticCanvas.html" class="project_image" data-cursor-icon="arrow">
@@ -534,12 +533,12 @@
             <div class="project_card">
               <div class="project_text">
                 <h2>Combating Biases through Play</h2>
-                <h4>
+                <p class="subtitle">
                   Bachelor Thesis (1.0) in collaboration with LMU and Università della
                   Svizzera italiana <br />
                   | designing & implementing an educational game for primary
                   school children
-                </h4>
+                </p>
               </div>
 
               <a href="storytellingGame.html" class="project_image" data-cursor-icon="arrow">
@@ -555,10 +554,10 @@
             <div class="project_card">
               <div class="project_text">
                 <h2>MUNTUM Debate Club</h2>
-                <h4>
+                <p class="subtitle">
                   Website designed and prototyped in Figma along with my team
                   from TUDesign student club
-                </h4>
+                </p>
               </div>
 
               <a href="muntum.html" class="project_image" data-cursor-icon="arrow">
@@ -574,10 +573,10 @@
             <div class="project_card">
               <div class="project_text">
                 <h2>WildCraft Foundry</h2>
-                <h4>
+                <p class="subtitle">
                   E-commerce platform for 3D models, designed and prototyped in
                   Figma
-                </h4>
+                </p>
               </div>
 
               <a href="wildCraftFoundry.html" class="project_image" data-cursor-icon="arrow">
@@ -592,7 +591,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </main>
     <!-- END OF MAIN WRAPPER -->
 
     <!-- FOOTER -->

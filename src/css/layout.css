@@ -232,7 +232,7 @@
   font-size: 14px;
   letter-spacing: 0.5px;
   text-align: center;
-  color: var(--muted-olive);
+  color: var(--accent-color);
   background-color: rgba(255, 255, 255, 0.22);
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -1259,9 +1259,14 @@ html.touch .project_image img {
   gap: var(--space-sm);
 }
 
-.footer_home_text h3,
-.footer_home_text h4 {
+.footer_home_heading,
+.footer_home_sub {
   color: var(--white);
+}
+
+.footer_home_heading {
+  font-family: 'Jost-Regular';
+  font-size: var(--fs-h3);
 }
 
 .footer_home_email {

@@ -9,8 +9,8 @@
   }
 
   const NAV_LABELS = {
-    en: { home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact' },
-    de: { home: 'Start', about: 'Über mich', projects: 'Projekte', contact: 'Kontakt' },
+    en: { main: 'Main', home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact' },
+    de: { main: 'Hauptmenü', home: 'Start', about: 'Über mich', projects: 'Projekte', contact: 'Kontakt' },
   };
 
   //inlined (not <img>) so icon color follows currentColor/CSS instead of being baked into the file
@@ -21,7 +21,7 @@
     const { lang, enHref, deHref } = currentLangInfo();
     const t = NAV_LABELS[lang];
     return `
-    <nav class="navbar">
+    <nav class="navbar" aria-label="${t.main}">
       <div class="navbar_container">
 
         <div class="navbar_brand">

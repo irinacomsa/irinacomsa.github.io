@@ -281,9 +281,14 @@ h3 {
   font-size: var(--fs-h3);
 }
 
-h4 {
+h4, .subtitle {
   font-family: 'Jost-Light';
   font-size: var(--fs-h4);
+}
+
+/*matches the browser's bold on h4*/
+.subtitle {
+  font-weight: bold;
 }
 
 /*hero heading and "Latest Projects" swapped tags for correct SEO h1 order; these classes keep each sized as before*/

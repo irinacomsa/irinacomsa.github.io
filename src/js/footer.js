@@ -27,13 +27,13 @@
   function footerHTML() {
     const t = FOOTER_COPY[currentLang()];
     return `
-    <section id="footer" class="footer_section">
+    <footer id="footer" class="footer_section">
       <div class="footer_home_container">
         <div class="footer_home_content">
           <img src="public/assets/icons/footer_icon.svg" alt="" class="footer_home_icon" />
           <div class="footer_home_text">
-            <h3>${t.heading}</h3>
-            <h4>${t.sub}</h4>
+            <h2 class="footer_home_heading">${t.heading}</h2>
+            <p class="subtitle footer_home_sub">${t.sub}</p>
             <a
               href="mailto:irinacomsa28@gmail.com"
               class="footer_home_email"
@@ -55,7 +55,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </footer>
     `;
   }
 
