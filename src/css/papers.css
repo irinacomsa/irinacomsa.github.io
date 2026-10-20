@@ -1,0 +1,95 @@
+/*ACADEMIC PAPERS PAGE*/
+/*keeps the intro close to the h1*/
+.papers_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.papers_intro {
+  max-width: 600px;
+  font-family: 'Jost-Light';
+  font-size: var(--fs-body);
+}
+
+.papers_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+}
+
+/*55% cap keeps the text readable on tablets*/
+.paper {
+  display: grid;
+  grid-template-columns: min(560px, 55%) minmax(0, 1fr);
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.paper_preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  height: min(75vh, 720px);
+  padding: var(--space-xs);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--accent-color-rgb), 0.2);
+  background-color: rgba(var(--accent-color-rgb), 0.06);
+}
+
+.paper_preview:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.paper_preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.paper_text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/*passes AA in both themes, unlike --neutral-gray*/
+.paper_meta {
+  font-family: 'Jost-Light';
+  font-size: calc(14px * var(--fs-scale));
+  color: var(--hover-text-color);
+}
+
+/*long titles: between h4 and h3 size*/
+.paper_title {
+  font-size: clamp(18px, 1vw + 14px, 28px);
+}
+
+.paper_description {
+  font-family: 'Jost-Light';
+  font-size: var(--fs-body);
+}
+
+.paper_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+@media (max-width: 768px) {
+  .paper {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /*shorter, so a swipe can still scroll the page past it*/
+  .paper_preview {
+    max-width: 480px;
+    height: min(55vh, 480px);
+  }
+}
