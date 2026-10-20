@@ -1,8 +1,3 @@
-/*teaser card on index.html reuses one image for both hover states, same approach as fintalo*/
-.semanticCanvas-bw {
-  filter: grayscale(1);
-}
-
 /*tighter spacing between the text blocks, matching fintalo (the wider project_content gap stays for the images below)*/
 .sc_text_stack {
   display: flex;

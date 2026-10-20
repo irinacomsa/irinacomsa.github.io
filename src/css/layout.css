@@ -1200,6 +1200,11 @@ html.a11y-text-2 {
   opacity: 0;
 }
 
+/*grey state for cards that reuse one image*/
+.bw-filter {
+  filter: grayscale(1);
+}
+
 /*both images zoom together so the crossfade reads as one photo; bw-img stays opaque so fading color-img alone doesn't flash the background through*/
 .project_card:hover .bw-img,
 .project_card:hover .color-img {

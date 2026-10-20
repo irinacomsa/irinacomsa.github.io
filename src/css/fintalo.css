@@ -1,8 +1,3 @@
-/*teaser card on index.html reuses one image for both hover states*/
-.fintalo-bw {
-  filter: grayscale(1);
-}
-
 /*two stacked grids — keypoints|photo, then Challenge|Solution — 16px between the two grids.*/
 .fintalo_content_row {
   display: flex;
