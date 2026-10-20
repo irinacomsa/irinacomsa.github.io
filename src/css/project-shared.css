@@ -156,13 +156,13 @@
   padding-left: 0;
 }
 
-/*text-only pages (privacy) have no hero image, so clear the fixed navbar (top 12px + height 64px) directly*/
-.legal_section {
+/*no hero image: clear the fixed navbar (12px top + 64px height)*/
+.no_hero_section {
   padding-top: calc(12px + 64px + var(--space-2xl));
 }
 
-/*inline links in running text need more than color to stand out (WCAG 1.4.1)*/
-.legal_section .body a {
+/*not color alone (WCAG 1.4.1)*/
+.no_hero_section .body a {
   text-decoration: underline;
 }
 

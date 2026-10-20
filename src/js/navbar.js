@@ -84,7 +84,7 @@
 
     //theme lives on <html data-theme>, keyed by CSS via html[data-theme]; same localStorage pattern as accessibility.js
     const THEME_KEY = 'theme';
-    //storage can throw when blocked (privacy settings); the toggle still works, it just won't persist
+    //storage throws when blocked; theme then just won't persist
     const loadTheme = () => {
       try {
         return localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
