@@ -237,20 +237,6 @@ if (sideNav) {
 }
 
 
-//gives #about a "stuck" range long enough to reveal its own overflow before releasing
-function sizeHeroAboutSpacer() {
-    const about = document.querySelector('#about');
-    const spacer = document.querySelector('.hero_about_spacer');
-    if (!about || !spacer) return;
-    spacer.style.height = '0px'; // reset before measuring
-    const overflow = about.scrollHeight - window.innerHeight;
-    spacer.style.height = Math.max(0, overflow) + 'px';
-}
-window.addEventListener('DOMContentLoaded', sizeHeroAboutSpacer);
-window.addEventListener('load', sizeHeroAboutSpacer);
-window.addEventListener('resize', sizeHeroAboutSpacer);
-
-
 //native #hash jumps miscalculate against sticky sections; unstick elements before measuring their rect
 function trueOffsetTop(el) {
     const prevPosition = el.style.position;
@@ -273,7 +259,6 @@ document.addEventListener('click', (e) => {
 //same native-jump bug applies when a page loads directly with a #hash (e.g. a cross-page nav link)
 window.addEventListener('load', () => {
     if (!window.location.hash) return;
-    sizeHeroAboutSpacer();
     const target = document.getElementById(window.location.hash.slice(1));
     if (target) window.scrollTo({ top: trueOffsetTop(target) });
 });

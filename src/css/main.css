@@ -173,16 +173,12 @@ body {
   background-color: var(--bg-page);
 }
 
+/*scrolls normally over the sticky hero; sticking it too froze the page while it was taller than the screen*/
 #about {
-  position: sticky;
-  top: 0;
+  position: relative;
   min-height: 100vh;
   z-index: 2;
   background-color: var(--bg-surface);
-}
-
-.hero_about_spacer {
-  height: 0; /*set in px by main.js, see hero_about_spacer comment there*/
 }
 
 .hero_section_project{
