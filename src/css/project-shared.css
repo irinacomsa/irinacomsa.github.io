@@ -11,22 +11,19 @@
   margin-inline: auto; /*align to the center*/
   align-items: center;
   justify-content: space-between;
-  
-} 
+}
 
 /*Hero*/
 .project_hero_image {
-  max-width: 900px;  
+  max-width: 900px;
   height: auto;
   width: fit-content;
   display: block;
   margin-inline: auto; /*align to the center*/
-  align-items: center;   
+  align-items: center;
 }
 
-.project_hero_image img{
-     
-        
+.project_hero_image img {
   display: block;
 }
 
@@ -37,95 +34,35 @@
   flex-direction: column;
   margin-inline: auto; /*align to the center*/
   max-width: var(--max-width);
-  
+
   gap: var(--space-3xl);
- 
 }
 
-
-.project_content{
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4xl);
-    top: 0px;
-    left: 0px;
-}
-/*PROJECT DESCRIPTION*/
-.project_description{
+/*page title → page content: closer than the title is to the hero above*/
+.project_content {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   gap: var(--space-xl);
-  top:0;
-  left:0;
 }
-
-/*flex-basis+min-width:0 lets this shrink gracefully alongside .descriptionAndphoto instead of overflowing until the 768px breakpoint*/
-.keypoints{
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 360px;
-    min-width: 0;
-    max-width: 400px;
-    height: auto;
-    gap: var(--space-lg);
-}
-
-.keypoints ul{
-  list-style-position: inside;
-  padding-left: 0;
-  font-family: 'Jost-Light';
-  font-size: var(--fs-body); /*matches the sitewide fluid <p> scale so this text shrinks on mobile too*/ 
-}
-
-.keypoints p{
-  font-family: 'Jost-Medium';
-  font-size: var(--fs-body); /*matches the sitewide fluid <p> scale so this text shrinks on mobile too*/
-}
-
-.keypoint{
-    display:flex;
-    flex-direction: column;
-    gap: var(--space-xs); /*between title ("What I Did") and the rest*/
-}
-
-.collaborator_link {
-  text-decoration: underline;
-}
-
-.descriptionAndphoto{
-    display: flex;
-    flex-direction: column;
-    flex: 2 1 480px;
-    min-width: 0;
-    max-width: 640px;
-    justify-content: space-between;
-    gap: var(--space-lg);
-}
-
-/*end PROJECT DESCRIPTION*/
-
-
-.photos_project{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
-    gap: var(--space-xl);
+.photos_project {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  gap: var(--space-lg); /*same gap below a photo row as between the photos in it*/
 }
 
 /*grid (not flex) so mobile can drop to one column with no per-image sizing hack needed*/
-.Img1And2Project{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /*without this, row-stretch would force the shorter image to match its taller sibling's height*/
-    align-items: start;
-    width: 100%;
-    gap: var(--space-lg);
+.Img1And2Project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*without this, row-stretch would force the shorter image to match its taller sibling's height*/
+  align-items: start;
+  width: 100%;
+  gap: var(--space-lg);
 }
 
-/*stacked titled blocks, e.g. "What I Did" / "The Challenge" / "The Solution".
-  width:100%/max-width (not fixed) so it fills fintalo_content_row's grid track without overflowing below 600px*/
+/*stacked titled sections (privacy page); max-width keeps the line length readable*/
 .titled_description {
   display: flex;
   flex-direction: column;
@@ -134,43 +71,31 @@
   gap: var(--space-3xl);
 }
 
+/*sub-heading + its text (privacy sections, Semantic Canvas features)*/
 .titled_keypoint {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-md); /*heading → its text*/
 }
 
 .titled_keypoint .title {
   font-family: 'Jost-Medium';
-  font-size: var(--fs-body); /*matches the sitewide fluid <p> scale so this text shrinks on mobile too*/
+  font-size: var(--fs-h3);
 }
 
-.titled_keypoint .body,
-.titled_keypoint ul {
+.titled_keypoint .body {
   font-family: 'Jost-Light';
-  font-size: var(--fs-body); /*matches the sitewide fluid <p> scale so this text shrinks on mobile too*/
+  font-size: var(--fs-body);
 }
 
-.titled_keypoint ul {
-  list-style-position: inside;
-  padding-left: 0;
-}
-
-/*no hero image: clear the fixed navbar (12px top + 64px height)*/
+/*no hero image: clear the fixed navbar*/
 .no_hero_section {
-  padding-top: calc(12px + 64px + var(--space-2xl));
+  padding-top: calc(var(--navbar-clearance) + var(--space-2xl));
 }
 
 /*not color alone (WCAG 1.4.1)*/
 .no_hero_section .body a {
   text-decoration: underline;
-}
-
-/*full-width autoplay/loop video showcase, between description and photo sections*/
-.video_project_section {
-  padding-inline: var(--space-3xl);
-  margin-top: var(--space-4xl);
-  margin-bottom: var(--space-4xl);
 }
 
 .video_project {
@@ -179,7 +104,192 @@
   height: auto;
 }
 
+/*  PROJECT OVERVIEW: one layout for every project page — facts column, what I did, challenge/solution, optional photo  */
+.project_title_sub {
+  display: block;
+  margin-top: var(--space-xs);
+  font-family: 'Jost-Light';
+  font-size: var(--fs-h3);
+}
 
+.project_overview {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2.4fr);
+  gap: var(--space-2xl) var(--space-3xl);
+  align-items: start;
+}
 
+/*small uppercase label shared by facts (dt) and section headings (h2); explicit bold so both match*/
+.project_label {
+  font-family: 'Jost-Medium';
+  font-weight: bold;
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
 
+/*stays in view next to the longer main column (navbar: 12px top + 64px tall)*/
+.project_facts {
+  position: sticky;
+  top: calc(var(--navbar-clearance) + var(--space-lg));
+}
 
+/*same label-to-content gap as .project_block*/
+.project_fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-block: var(--space-sm);
+  border-top: 1px solid var(--neutral-gray);
+}
+
+.project_fact:last-child {
+  border-bottom: 1px solid var(--neutral-gray);
+}
+
+.project_fact dd {
+  font-family: 'Jost-Regular';
+  font-size: var(--fs-body);
+}
+
+.project_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  list-style: none;
+  padding-top: var(--space-2xs);
+}
+
+.project_tags li {
+  padding: 2px var(--space-sm);
+  border: 1px solid var(--neutral-gray);
+  border-radius: 100px;
+  font-size: var(--fs-small);
+}
+
+.project_links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  list-style: none;
+}
+
+/*underlined so links aren't marked by color alone (WCAG 1.4.1)*/
+.project_links a {
+  font-family: 'Jost-Regular';
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/*last word + arrow can't be split, so the arrow never wraps onto its own line*/
+.project_link_end {
+  white-space: nowrap;
+}
+
+.project_links svg {
+  margin-left: 4px;
+  vertical-align: -1px;
+}
+
+.project_main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+  min-width: 0;
+}
+
+/*8px + the text's line-height reads as ~16px between label and content*/
+.project_block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.project_block p {
+  font-family: 'Jost-Light';
+}
+
+/*"What I did" label marked like a highlighter pen: a hand-drawn stroke behind the text
+  (slightly tilted, uneven ends and corners), so the text itself stays straight*/
+.project_marker {
+  position: relative;
+  isolation: isolate; /*keeps the stroke behind this label, not behind the page*/
+  align-self: flex-start;
+}
+
+.project_marker::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -0.2em -0.6em -0.35em -0.35em;
+  border-radius: 0.9em 0.3em 1em 0.2em / 0.4em 0.9em 0.3em 0.7em;
+  background-color: color-mix(in srgb, var(--muted-olive) 50%, transparent);
+  transform: rotate(-1.5deg) skewX(-10deg);
+}
+
+/*the dark-mode olive is also the label color, so the stroke is lighter there to keep the text readable*/
+html[data-theme='dark'] .project_marker::before {
+  background-color: color-mix(in srgb, var(--muted-olive) 28%, transparent);
+}
+
+/*arrow-bulleted rows between hairlines*/
+.project_steps {
+  list-style: none;
+}
+
+.project_steps li {
+  display: grid;
+  grid-template-columns: 0.75em 1fr;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--neutral-gray);
+  font-family: 'Jost-Light';
+  font-size: var(--fs-body);
+}
+
+.project_steps li:last-child {
+  border-bottom: 1px solid var(--neutral-gray);
+}
+
+/*svg used as a mask so it takes the accent color; 1lh tall so it centers on the first line*/
+.project_steps li::before {
+  content: '';
+  height: 1lh;
+  background-color: var(--accent-color);
+  mask: url('../../public/assets/icons/arrow_bulletpoint.svg') center / contain no-repeat;
+}
+
+.project_problem_solution {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.project_figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.project_figure figcaption {
+  font-family: 'Jost-Regular';
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 900px) {
+  .project_overview {
+    grid-template-columns: 1fr;
+  }
+
+  .project_facts {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .project_problem_solution {
+    grid-template-columns: 1fr;
+  }
+}

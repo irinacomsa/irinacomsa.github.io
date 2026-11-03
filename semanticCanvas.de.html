@@ -37,6 +37,8 @@
     <script src="src/js/footer.js" defer></script>
     <script src="src/js/main.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/vendor/lenis.min.js" defer></script>
+    <script src="src/js/smooth-scroll.js" defer></script>
 
     <!--logo-->
     <link rel="icon" type="image/png" href="public/assets/images/favicon.png">
@@ -45,11 +47,6 @@
   <body>
     <!-- NAVBAR -->
     <div data-navbar data-home-href="index.de.html"></div>
-
-    <nav class="side-nav" aria-label="Projektnavigation">
-      <a class="side-nav_prev" href="papers.de.html"><span>Vorheriges Projekt</span></a>
-      <a class="side-nav_next" href="storytellingGame.de.html">Nächstes Projekt</a>
-    </nav>
 
     <!--  SOCIAL LINKS  -->
     <aside class="social-links" aria-label="Social-Media-Links">
@@ -82,43 +79,61 @@
       <div class="project_container">
 
         <div class="project_content">
-          <h1 class="project_title">Semantic Canvas <br> | Erweiterung für computergestützte Notebooks</h1>
+          <h1 class="project_title">Semantic Canvas <span class="project_title_sub">VS-Code-Erweiterung für computergestützte Notebooks</span></h1>
 
-          <div class="sc_text_stack">
-            <div class="titled_keypoint">
-              <p class="title">Was ich gemacht habe</p>
-              <ul>
-              <li>Semantic Canvas entwickelt, eine VS-Code-Erweiterung für computergestützte Notebooks, gemeinsam mit 2 Teammitgliedern für das Universitätspraktikum "Intelligent Systems"</li>
-              <li>Als Toolbox konzipiert, die das Navigieren, Dokumentieren und Pflegen von Notebooks beschleunigt, mit Suche als Kernfunktion</li>
-              <li>Verwendet: Figma, JavaScript, HTML, CSS, Python</li>
-              </ul>
-            </div>
+          <div class="project_overview">
+            <dl class="project_facts">
+              <div class="project_fact">
+                <dt class="project_label">Kontext</dt>
+                <dd>Universitätspraktikum &quot;Intelligent Systems&quot;</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Jahr</dt>
+                <dd>2026</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Dauer</dt>
+                <dd>3 Monate</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Team</dt>
+                <dd>Ich + 2 Teammitglieder</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Tools</dt>
+                <dd><ul class="project_tags"><li>Figma</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>Python</li></ul></dd>
+              </div>
+            </dl>
 
-            <div class="titled_keypoint">
-                  <p class="title">Dauer</p>
-                  <ul>
-                    <li>3 Monate</li>
-                  </ul>
-            </div>
-
-            <div class="challenge_solution_row">
-              <div class="titled_keypoint">
-                <p class="title">Die Herausforderung</p>
-                <p class="body">Lange Notebooks sind schwer zu navigieren, Dokumentation wird oft übersprungen, weil sie das Programmieren verlangsamt, und Notebooks sammeln über die Zeit unbemerkt tote, veraltete oder doppelte Zellen an.</p>
+            <div class="project_main">
+              <div class="project_block">
+                <h2 class="project_label project_marker">Was ich gemacht habe</h2>
+                <ul class="project_steps">
+                  <li>Semantic Canvas entwickelt, eine VS-Code-Erweiterung für computergestützte Notebooks, gemeinsam mit 2 Teammitgliedern für das Universitätspraktikum &quot;Intelligent Systems&quot;</li>
+                  <li>Als Toolbox konzipiert, die das Navigieren, Dokumentieren und Pflegen von Notebooks beschleunigt, mit Suche als Kernfunktion</li>
+                </ul>
               </div>
 
-              <div class="titled_keypoint">
-                <p class="title">Die Lösung</p>
-                <p class="body">Semantic Canvas ergänzt eine Seitenleisten-Codeübersicht, semantische und Stichwort-Suche, KI-unterstützte (und von Menschen editierbare) Zell-Dokumentation, einen Umschalter zwischen Seitenleisten- und Inline-Ansicht, Code-Health-Hinweise sowie konfigurierbare KI-Einstellungen. Nutzer*innen können Notebooks navigieren, dokumentieren und pflegen, ohne ihren Workflow zu unterbrechen.</p>
+              <div class="project_problem_solution">
+                <div class="project_block">
+                  <h2 class="project_label">Die Herausforderung</h2>
+                  <p>Lange Notebooks sind schwer zu navigieren, Dokumentation wird oft übersprungen, weil sie das Programmieren verlangsamt, und Notebooks sammeln über die Zeit unbemerkt tote, veraltete oder doppelte Zellen an.</p>
+                </div>
+                <div class="project_block">
+                  <h2 class="project_label">Die Lösung</h2>
+                  <p>Semantic Canvas ergänzt eine Seitenleisten-Codeübersicht, semantische und Stichwort-Suche, KI-unterstützte (und von Menschen editierbare) Zell-Dokumentation, einen Umschalter zwischen Seitenleisten- und Inline-Ansicht, Code-Health-Hinweise sowie konfigurierbare KI-Einstellungen. Nutzer*innen können Notebooks navigieren, dokumentieren und pflegen, ohne ihren Workflow zu unterbrechen.</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="Img1And2Project">
-            <img src="public/assets/images/semanticSearch/technical architecture.png" alt="Technische Architektur der Semantic-Canvas-Erweiterung"/>
-            <img src="public/assets/images/semanticSearch/user workflow.png" alt="Workflow der Seitenleisten- und Inline-Ansicht in Semantic Canvas"/>
           </div>
         </div><!--end content-->
+
+        <div class="photos_project">
+          <div class="Img1And2Project">
+            <img src="public/assets/images/semanticSearch/technical_architecture.webp" alt="Technische Architektur der Semantic-Canvas-Erweiterung"/>
+            <img src="public/assets/images/semanticSearch/user workflow.png" alt="Workflow der Seitenleisten- und Inline-Ansicht in Semantic Canvas"/>
+          </div>
+        </div>
 
       </div><!--end container-->
     </section>
@@ -130,19 +145,21 @@
 
           <div class="feature_card">
             <div class="titled_keypoint">
-              <p class="title">1. Navigieren & Suchen</p>
+              <p class="title">1. Navigieren &amp; Suchen</p>
               <p class="body">Eine Seitenleiste gibt einen klaren Überblick über die Struktur des Notebooks, sodass Nutzer*innen mit einem Klick zu jeder Zelle springen können. Zwei Suchmodi decken beide Fälle ab: semantische Suche nach den besten inhaltlichen Treffern und eine Stichwortsuche mit VS-Code-nativen Funktionen wie Ersetzen, Alle ersetzen und Groß-/Kleinschreibung beachten.</p>
             </div>
-            <video
-              class="video_project sc_video_uniform"
-              data-src="public/assets/images/semanticSearch/search and navigate video.mov"
-              preload="none"
-              muted
-              loop
-              playsinline
-              disablepictureinpicture
-              aria-label="Funktions-Walkthrough: Navigieren und Suchen"
-            ></video>
+            <figure>
+              <video
+                class="video_project sc_video_uniform"
+                data-src="public/assets/images/semanticSearch/search and navigate video.mov"
+                preload="none"
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+              ></video>
+              <figcaption class="visually-hidden">Funktions-Walkthrough: Navigieren und Suchen</figcaption>
+            </figure>
           </div>
 
           <div class="feature_card">
@@ -150,16 +167,18 @@
               <p class="title">2. Dokumentation bearbeiten</p>
               <p class="body">Jede Zelle erhält automatisch generierte Bezeichnung und Zusammenfassung, die Nutzer*innen bearbeiten oder mit KI neu generieren können. KI-geschriebene Inhalte werden mit einem gelben Symbol markiert, von Menschen bearbeitete mit einem grünen, sodass immer klar ist, wie viel der Dokumentation von KI stammt und wie viel von Menschen.</p>
             </div>
-            <video
-              class="video_project sc_video_uniform"
-              data-src="public/assets/images/semanticSearch/document video.mov"
-              preload="none"
-              muted
-              loop
-              playsinline
-              disablepictureinpicture
-              aria-label="Funktions-Walkthrough: Dokumentation"
-            ></video>
+            <figure>
+              <video
+                class="video_project sc_video_uniform"
+                data-src="public/assets/images/semanticSearch/document video.mov"
+                preload="none"
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+              ></video>
+              <figcaption class="visually-hidden">Funktions-Walkthrough: Dokumentation</figcaption>
+            </figure>
           </div>
 
           <div class="feature_card">
@@ -185,6 +204,11 @@
     </section>
 
   </main> <!-- END OF MAIN WRAPPER -->
+
+    <nav class="side-nav" aria-label="Projektnavigation">
+      <a class="side-nav_prev" href="papers.de.html"><span>Vorheriges Projekt</span></a>
+      <a class="side-nav_next" href="storytellingGame.de.html">Nächstes Projekt</a>
+    </nav>
 
 
     <!-- FOOTER -->

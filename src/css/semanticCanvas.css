@@ -1,28 +1,8 @@
-/*tighter spacing between the text blocks, matching fintalo (the wider project_content gap stays for the images below)*/
-.sc_text_stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
-
-/*Challenge and Solution side by side, top-aligned so both titles sit at the same level*/
-.challenge_solution_row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: var(--space-lg);
-}
-
-.challenge_solution_row .titled_keypoint {
-  flex: 1;
-}
-
 /*5 features, 2 per row*/
 .features_grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: var(--space-3xl);
-  row-gap: var(--space-4xl);
+  gap: var(--space-3xl); /*feature rows are groups inside the section, one step below the section padding*/
 }
 
 .feature_card {
@@ -44,10 +24,6 @@
 }
 
 @media (max-width: 768px) {
-  .challenge_solution_row {
-    flex-direction: column;
-  }
-
   .features_grid {
     grid-template-columns: 1fr;
   }

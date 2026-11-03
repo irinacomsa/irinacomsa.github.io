@@ -10,19 +10,19 @@
 /*  DESIGN   */
 :root {
   /* Colors */
-  --secondary-color: #004D0C;
+  --secondary-color: #004d0c;
   --secondary-color-rgb: 0, 77, 12;
-  --primary-color: #F4F7F1;
+  --primary-color: #f4f7f1;
   --primary-color-rgb: 244, 247, 241;
-  --muted-olive: #8CAE68;
-  --neutral-gray: #A3A3A3;
+  --muted-olive: #8cae68;
+  --neutral-gray: #a3a3a3;
   --white: #ffffff;
   --black: #000000;
-  --hover-color: #96B6A1;
+  --hover-color: #96b6a1;
   /*same hue as --hover-color, darkened for use as hover TEXT (vs. --hover-color's own use as a
     hover background fill in .btn-primary, which needs to stay light there) — #96B6A1 only
     reaches ~1.9:1 against --bg-page, well under WCAG AA's 4.5:1; this reaches ~6.4:1*/
-  --hover-text-color: #43604D;
+  --hover-text-color: #43604d;
 
   /*semantic tokens so dark mode only needs to override these few values*/
   --bg-page: var(--primary-color);
@@ -35,41 +35,52 @@
   /* Layout */
   --max-width: 1280px;
 
-  /* Spacing: 4px-based scale, use these instead of raw px */
+  /* Spacing: 4px-based scale, use these instead of raw px. Small steps are fixed (component spacing);
+     large steps are fluid 390px→1440px like the type scale, each staying 20-30% above the one below */
   --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
-  --space-4xl: 96px;
-  --space-5xl: 120px;
+  --space-2xl: clamp(40px, 0.76vw + 37px, 48px);
+  --space-3xl: clamp(48px, 1.52vw + 42px, 64px);
+  --space-4xl: clamp(60px, 3.43vw + 47px, 96px);
+  --space-5xl: clamp(76px, 4.19vw + 60px, 120px);
 
+  /*side margins of every section/navbar/footer — separate from the vertical scale so the two can change independently*/
+  --page-gutter: 64px;
+  /*fixed navbar: 12px top inset + 64px tall; content below it starts after this*/
+  --navbar-clearance: calc(12px + 64px);
 
   /*fluid type scale: clamp()'s vw term scales continuously instead of jumping at breakpoints;
     shared via variables so project-page CSS matches instead of hardcoding sizes*/
   --fs-h1: clamp(32px, 7vw + 7px, 96px);
-  --fs-h2: clamp(22px, 2.8vw + 12px, 48px);
-  --fs-h3: clamp(20px, 1.7vw + 14px, 36px);
-  --fs-h4: clamp(16px, 0.45vw + 14px, 20px);
-  --fs-body: clamp(15px, 0.54vw + 13px, 20px);
+  --fs-h2: clamp(28px, 2.8vw + 12px, 48px);
+  --fs-h3: clamp(22px, 1.4vw + 12px, 32px);
+  --fs-h4: clamp(18px, 0.45vw + 14px, 20px);
+  --fs-body: clamp(16px, 0.54vw + 13px, 20px);
 
   /*multiplier for fixed-px sizes that skip the fluid --fs-* scale; only the a11y text-size control changes it*/
   --fs-scale: 1;
+
+  /*fixed steps below body: secondary text (tags, dates, captions) and uppercase labels*/
+  --fs-small: calc(14px * var(--fs-scale));
+  --fs-label: calc(12px * var(--fs-scale));
 }
 
 /*toggled on <html> by navbar.js's sun/moon button; swapping these tokens darkens everything for free*/
-html[data-theme="dark"] {
-  --bg-page: #2E2E2E;
+html[data-theme='dark'] {
+  --bg-page: #2e2e2e;
   --bg-page-rgb: 46, 46, 46;
   --bg-surface: #383838;
   --text-color: var(--white);
-  --muted-olive: #C1F28F;
+  --muted-olive: #c1f28f;
   --accent-color: var(--muted-olive); /*base hunter green is too low-contrast on a dark surface*/
   --accent-color-rgb: 193, 242, 143;
-  --hover-text-color: var(--hover-color); /*the light-mode darkened value fails here; base --hover-color already passes against a dark surface*/
+  --hover-text-color: var(
+    --hover-color
+  ); /*the light-mode darkened value fails here; base --hover-color already passes against a dark surface*/
 }
 
 /*  FONTS  */
@@ -136,10 +147,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/*required by Lenis (smooth-scroll.js), from its lenis.css; it adds .lenis to <html> while active*/
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 body {
   background-color: var(--bg-page);
   color: var(--text-color);
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .main_wrapper {
@@ -154,16 +179,13 @@ body {
 
 /* SECTION LAYOUT */
 .section {
-  padding: var(--space-4xl) var(--space-3xl) var(--space-4xl);
+  padding: var(--space-4xl) var(--page-gutter) var(--space-4xl);
   width: 100%;
 }
 
 /*stacking-cards effect: About covers the hero on scroll*/
 .hero_section {
-  padding-top: var(--space-5xl);
-  padding-left: var(--space-3xl);
-  padding-right: var(--space-3xl);
-  padding-bottom: var(--space-4xl);
+  padding: var(--space-5xl) var(--page-gutter) var(--space-4xl);
   height: 100%;
   width: 100%;
   position: sticky;
@@ -176,41 +198,39 @@ body {
 /*scrolls normally over the sticky hero; sticking it too froze the page while it was taller than the screen*/
 #about {
   position: relative;
+  overflow-x: clip; /*hidden hover logos (.logo_hover_link::after) at a line end mustn't widen the page*/
   min-height: 100vh;
   z-index: 2;
   background-color: var(--bg-surface);
 }
 
-.hero_section_project{
-  padding-top: var(--space-3xl);
-  padding-left: var(--space-3xl);
-  padding-right: var(--space-3xl);
-  padding-bottom: 0;
+/*starts below the fixed navbar, same offset as .no_hero_section*/
+.hero_section_project {
+  padding: calc(var(--navbar-clearance) + var(--space-2xl)) var(--page-gutter) 0;
   height: 100%;
   width: 100%;
 }
 
 .section_project {
-  padding:  var(--space-3xl) var(--space-3xl) var(--space-4xl);
+  padding: var(--space-3xl) var(--page-gutter) var(--space-4xl);
   width: 100%;
 }
 
-
-.footer_section{
+.footer_section {
   margin-top: auto;
-  padding-top: var(--space-4xl);
-  padding-left: var(--space-3xl);
-  padding-right: var(--space-3xl);
-  padding-bottom: var(--space-2xl);
+  padding: var(--space-4xl) var(--page-gutter) var(--space-2xl);
   height: 380px;
   width: 100%;
   background-color: var(--secondary-color);
 }
 
-
 /*  GLOBAL text styles  */
 
-h1, h2, h3, p, a{
+h1,
+h2,
+h3,
+p,
+a {
   text-decoration: none;
   color: var(--text-color);
 }
@@ -219,7 +239,8 @@ a:hover {
   color: var(--hover-text-color);
 }
 
-.navbar_nav a:hover { /*global a doesn t work for hover nav buttons*/
+.navbar_nav a:hover {
+  /*global a doesn t work for hover nav buttons*/
   color: var(--hover-text-color);
 }
 
@@ -232,8 +253,12 @@ a:hover {
   padding: var(--space-xs) var(--space-sm);
   border-radius: 100px;
   font-family: 'Jost-Medium';
+  min-height: 44px; /*min tap height*/
   white-space: nowrap;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /*filled button, main call to action*/
@@ -261,7 +286,6 @@ a:hover {
   color: var(--hover-text-color);
 }
 
-
 h1 {
   font-family: 'Jost-Medium';
   font-size: var(--fs-h1);
@@ -277,7 +301,8 @@ h3 {
   font-size: var(--fs-h3);
 }
 
-h4, .subtitle {
+h4,
+.subtitle {
   font-family: 'Jost-Light';
   font-size: var(--fs-h4);
 }
@@ -292,15 +317,26 @@ h4, .subtitle {
   font-size: var(--fs-h2);
 }
 
+/*tight leading + tracking on headings vs the body's 1.6; :where keeps specificity at 0
+  so component classes (e.g. .project_label's wide tracking) still win*/
+:where(h1, h2, h3) {
+  line-height: 1.15;
+}
+
+:where(h1, h2) {
+  letter-spacing: -0.015em;
+}
+
+/*96px display: larger sizes need more negative tracking to look even*/
 .projects_heading {
   font-size: var(--fs-h1);
+  letter-spacing: -0.03em;
 }
 
 p {
   font-family: 'Jost-Regular';
   font-size: var(--fs-body);
 }
-
 
 /*hides visually, keeps for screen readers*/
 .visually-hidden {
@@ -332,8 +368,14 @@ p {
 }
 
 @keyframes typewriterBlink {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -343,7 +385,10 @@ p {
 }
 
 /*common attributes for all images from ALL sections of all pages *except nav, side-nav and footer*/
-.section img, .hero_section img, .hero_section_project img, .section_project img{
+.section img,
+.hero_section img,
+.hero_section_project img,
+.section_project img {
   min-width: 0;
   width: 100%;
   max-width: 100%; /*preventing pixelation on large screens*/
@@ -358,19 +403,13 @@ p {
 /*shrinking these vars cascades through every section/nav/footer padding automatically*/
 @media (max-width: 1024px) {
   :root {
-    --space-3xl: 40px;
-    --space-4xl: 64px;
-    --space-5xl: 88px;
+    --page-gutter: 40px;
   }
 }
 
 @media (max-width: 640px) {
   :root {
-    --space-lg: 16px;
-    /*wider than the side-nav/social-links footprint (layout.css) so they don't overlap body text*/
-    --space-3xl: 36px;
-    --space-4xl: 48px;
-    --space-5xl: 64px;
+    /*wider than the social-links footprint (layout.css) so they don't overlap body text*/
+    --page-gutter: 36px;
   }
 }
-

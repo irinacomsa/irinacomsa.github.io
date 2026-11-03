@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script>try { document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") === "dark" ? "dark" : "light"); } catch (e) {}</script>
+    <script>document.documentElement.classList.add("js"); try { document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") === "dark" ? "dark" : "light"); } catch (e) {}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
@@ -17,18 +17,18 @@
     <link rel="alternate" hreflang="x-default" href="https://irinacomsa.github.io/index.html" />
     <link rel="canonical" href="https://irinacomsa.github.io/index.html" />
 
-    <title>Irina Comsa — UX & Software Engineering Portfolio</title>
+    <title>Irina Comsa — UX &amp; Software Engineering Portfolio</title>
 
     <!-- Open Graph / Twitter Card -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Irina Comsa Portfolio" />
-    <meta property="og:title" content="Irina Comsa — UX & Software Engineering Portfolio" />
+    <meta property="og:title" content="Irina Comsa — UX &amp; Software Engineering Portfolio" />
     <meta property="og:description" content="Portfolio of Irina Comsa, a Software Engineering and UX Design student in Munich, Germany, working across UX design and software development." />
     <meta property="og:url" content="https://irinacomsa.github.io/index.html" />
     <meta property="og:image" content="https://irinacomsa.github.io/public/assets/images/profile.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Irina Comsa — UX & Software Engineering Portfolio" />
+    <meta name="twitter:title" content="Irina Comsa — UX &amp; Software Engineering Portfolio" />
     <meta name="twitter:description" content="Portfolio of Irina Comsa, a Software Engineering and UX Design student in Munich, Germany, working across UX design and software development." />
     <meta name="twitter:image" content="https://irinacomsa.github.io/public/assets/images/profile.png" />
 
@@ -88,6 +88,8 @@
     <script src="src/js/footer.js" defer></script>
     <script src="src/js/main.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/vendor/lenis.min.js" defer></script>
+    <script src="src/js/smooth-scroll.js" defer></script>
 
     <!--logo-->
     <link
@@ -157,7 +159,7 @@
                 </h1>
                 <p class="subtitle">
                   Master's student in Informatics with focus on HCI,<br />
-                  working across UX & Software Engineering
+                  working across UX &amp; Software Engineering
                 </p>
 
                 <div class="hero_buttons">
@@ -260,7 +262,7 @@
             <div class="about_skills">
               <div class="skillsAndExperience">
                 <div class="skills">
-                  <h3>Skills & Tools</h3>
+                  <h3>Skills &amp; Tools</h3>
                   <ul class="skillsGrid">
                     <li class="skill_item">
                       <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/figma.png" alt="" /></span>
@@ -316,7 +318,7 @@
                     </li>
                     <li class="skill_item">
                       <span class="skill_icon_box"><img class="skill_icon" src="public/assets/images/logos/claude.png" alt="Claude" /></span>
-                      <p class="skill_name">Claude <br>Design & Skills</p>
+                      <p class="skill_name">Claude <br>Design &amp; Skills</p>
                     </li>
                     <li class="skill_item">
                       <span class="skill_icon_box skill_icon_box--wide"><img class="skill_icon" src="public/assets/images/logos/n8n.png" alt="n8n" /></span>
@@ -519,15 +521,14 @@
               <div class="project_text">
                 <h2>Fintalo</h2>
                 <p class="subtitle">
-                  redesigning Fintalo's AI-native Fintech Platform along with my
-                  team from TUDesign
+                  Redesigning an AI-powered platform for the full M&amp;A deal lifecycle
                 </p>
               </div>
 
               <a href="fintalo.html" class="project_image" data-cursor-icon="arrow">
                 <img
                   src="public/assets/images/fintalo/teaser.webp"
-                  alt="Screenshot of the Fintalo AI-native M&A platform redesign"
+                  alt="Screenshot of the Fintalo AI-native M&amp;A platform redesign"
                   class="bw-img bw-filter"
                 />
                 <img
@@ -560,8 +561,7 @@
               <div class="project_text">
                 <h2>Semantic Canvas</h2>
                 <p class="subtitle">
-                  Computational notebook extension built with 2 teammates for
-                  the "Intelligent Systems" university practical
+                  VS Code extension for computational notebooks
                 </p>
               </div>
 
@@ -583,9 +583,9 @@
               <div class="project_text">
                 <h2>Combating Biases through Play</h2>
                 <p class="subtitle">
-                  Bachelor Thesis (1.0) in collaboration with LMU and Università della
+                  Bachelor thesis (1.0) in collaboration with LMU and Università della
                   Svizzera italiana <br />
-                  | designing & implementing an educational game for primary
+                  | designing &amp; implementing an educational game for primary
                   school children
                 </p>
               </div>
@@ -604,8 +604,7 @@
               <div class="project_text">
                 <h2>MUNTUM Debate Club</h2>
                 <p class="subtitle">
-                  Website designed and prototyped in Figma along with my team
-                  from TUDesign student club
+                  Website redesign for a Munich student debate club
                 </p>
               </div>
 

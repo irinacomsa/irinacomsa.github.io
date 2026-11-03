@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <script>try { document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") === "dark" ? "dark" : "light"); } catch (e) {}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio of Irina Comsa: an e-commerce platform for 3D models, designed and prototyped in Figma.">
+    <meta name="description" content="Portfolio of Irina Comsa: an E-commerce platform for 3D models.">
     <meta name="google-site-verification" content="HTfGTt3uIeofMBIrG480G_uW8pSm6BpFvpTYmr-GXTo" />
     <link rel="alternate" hreflang="en" href="https://irinacomsa.github.io/wildCraftFoundry.html" />
     <link rel="alternate" hreflang="de" href="https://irinacomsa.github.io/wildCraftFoundry.de.html" />
@@ -18,12 +18,12 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Irina Comsa Portfolio" />
     <meta property="og:title" content="WildCraft Foundry — E-Commerce Platform | Irina Comsa" />
-    <meta property="og:description" content="Portfolio of Irina Comsa: an e-commerce platform for 3D models, designed and prototyped in Figma." />
+    <meta property="og:description" content="Portfolio of Irina Comsa: an E-commerce platform for 3D models." />
     <meta property="og:url" content="https://irinacomsa.github.io/wildCraftFoundry.html" />
     <meta property="og:image" content="https://irinacomsa.github.io/public/assets/images/project3_hero_image.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="WildCraft Foundry — E-Commerce Platform | Irina Comsa" />
-    <meta name="twitter:description" content="Portfolio of Irina Comsa: an e-commerce platform for 3D models, designed and prototyped in Figma." />
+    <meta name="twitter:description" content="Portfolio of Irina Comsa: an E-commerce platform for 3D models." />
     <meta name="twitter:image" content="https://irinacomsa.github.io/public/assets/images/project3_hero_image.webp" />
 
     <!-- Styles -->
@@ -36,6 +36,8 @@
     <script src="src/js/footer.js" defer></script>
     <script src="src/js/main.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/vendor/lenis.min.js" defer></script>
+    <script src="src/js/smooth-scroll.js" defer></script>
 
     <!--logo-->
     <link rel="icon" type="image/png" href="public/assets/images/favicon.png">
@@ -44,14 +46,6 @@
   <body>
     <!-- NAVBAR -->
     <div data-navbar data-home-href="index.html"></div>
-
-    
-    
-    
-    <nav class="side-nav" aria-label="Project navigation">
-      <a class="side-nav_prev" href="muntum.html"><span>Previous Project</span></a>
-      <a class="side-nav_next" href="fintalo.html">Next Project</a>
-    </nav>
 
     <!--  SOCIAL LINKS  -->
     <aside class="social-links" aria-label="Social media links">
@@ -84,26 +78,53 @@
       <div class="project_container">
 
         <div class="project_content">
-          <h1 class="project_title">WildCraft Foundry <br> | e-commerce platform for 3D models</h1>
-          <div class="titled_description">
-            <div class="titled_keypoint">
-              <p class="title">What I Did</p>
-              <ul>
-              <li>Created an e-commerce platform for 3D models for a 3D artist</li>
-              <li>Implementation in Shopify for secure payment</li>
-              </ul>
-            </div>
+          <h1 class="project_title">WildCraft Foundry <span class="project_title_sub">E-commerce platform for 3D models</span></h1>
 
-            <div class="titled_keypoint">
-              <p class="title">The Challenge</p>
-              <p class="body">The artist needed a way to turn casual visitors into dedicated Patreon supporters. The site had to bridge two very different worlds: the medieval fantasy of Dungeons & Dragons and the high-tech of 3D modeling and printing.</p>
-            </div>
+          <div class="project_overview">
+            <dl class="project_facts">
+              <div class="project_fact">
+                <dt class="project_label">Context</dt>
+                <dd>Client project for a 3D artist</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Year</dt>
+                <dd>2025</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Duration</dt>
+                <dd>1 day</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Team</dt>
+                <dd>Solo</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Tools</dt>
+                <dd><ul class="project_tags"><li>Figma</li><li>Shopify</li></ul></dd>
+              </div>
+            </dl>
 
-            <div class="titled_keypoint">
-              <p class="title">The Solution</p>
-              <p class="body">I designed a digital space where 'Tech meets Medieval'. By highlighting the artist's dedication and personality through custom layouts, the site feels like a personal workshop rather than just a store, making users more likely to donate.</p>
+            <div class="project_main">
+              <div class="project_block">
+                <h2 class="project_label project_marker">What I Did</h2>
+                <ul class="project_steps">
+                  <li>Created an E-commerce platform for 3D models for a 3D artist</li>
+                  <li>Implementation in Shopify for secure payment</li>
+                </ul>
+              </div>
+
+              <div class="project_problem_solution">
+                <div class="project_block">
+                  <h2 class="project_label">The Challenge</h2>
+                  <p>The artist needed a way to turn casual visitors into dedicated Patreon supporters. The site had to bridge two very different worlds: the medieval fantasy of Dungeons &amp; Dragons and the high-tech of 3D modeling and printing.</p>
+                </div>
+                <div class="project_block">
+                  <h2 class="project_label">The Solution</h2>
+                  <p>I designed a digital space where 'Tech meets Medieval'. By highlighting the artist's dedication and personality through custom layouts, the site feels like a personal workshop rather than just a store, making users more likely to donate.</p>
+                </div>
+              </div>
             </div>
-          </div> <!--end description-->
+          </div>
         </div><!--end content-->
 
         <div class="photos_project">
@@ -119,6 +140,11 @@
     </section>
     
   </main> <!-- END OF MAIN WRAPPER -->
+
+    <nav class="side-nav" aria-label="Project navigation">
+      <a class="side-nav_prev" href="muntum.html"><span>Previous Project</span></a>
+      <a class="side-nav_next" href="fintalo.html">Next Project</a>
+    </nav>
 
 
     <!-- FOOTER -->

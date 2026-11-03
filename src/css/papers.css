@@ -1,9 +1,8 @@
 /*ACADEMIC PAPERS PAGE*/
-/*keeps the intro close to the h1*/
 .papers_header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md); /*heading → its text*/
 }
 
 .papers_intro {
@@ -15,7 +14,7 @@
 .papers_list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4xl);
+  gap: var(--space-3xl); /*papers are groups inside the page, one step below the section padding*/
 }
 
 /*55% cap keeps the text readable on tablets*/
@@ -70,7 +69,10 @@
   background-color: var(--secondary-color);
   color: var(--white);
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .paper_loupe_toggle svg {
@@ -85,7 +87,7 @@
   color: var(--secondary-color);
 }
 
-.paper_loupe_toggle[aria-pressed="true"] {
+.paper_loupe_toggle[aria-pressed='true'] {
   background-color: var(--white);
   color: var(--secondary-color);
 }
@@ -121,19 +123,18 @@ html.touch .paper_loupe_toggle {
 .paper_text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md); /*heading → its text*/
 }
 
 /*passes AA in both themes, unlike --neutral-gray*/
 .paper_meta {
   font-family: 'Jost-Light';
-  font-size: calc(14px * var(--fs-scale));
+  font-size: var(--fs-small);
   color: var(--hover-text-color);
 }
 
-/*long titles: between h4 and h3 size*/
 .paper_title {
-  font-size: clamp(18px, 1vw + 14px, 28px);
+  font-size: var(--fs-h3);
 }
 
 .paper_description {

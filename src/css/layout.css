@@ -7,8 +7,8 @@
 .navbar {
   position: fixed;
   top: 12px;
-  left: calc(var(--space-3xl) - var(--space-lg));
-  right: calc(var(--space-3xl) - var(--space-lg));
+  left: calc(var(--page-gutter) - var(--space-lg));
+  right: calc(var(--page-gutter) - var(--space-lg));
   max-width: calc(var(--max-width) + 2 * var(--space-lg));
   margin-inline: auto;
   height: 64px;
@@ -36,14 +36,19 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 /*frosted glass once scrolled past the hero — saturate keeps colors from washing out, inset top highlight adds sheen*/
 .navbar.scrolled::before {
   background-color: rgba(var(--bg-page-rgb), 0.55);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
 }
@@ -86,7 +91,9 @@
   color: var(--accent-color);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .theme_toggle:hover {
@@ -97,6 +104,21 @@
 .theme_toggle svg {
   width: 20px;
   height: 20px;
+}
+
+/*same invisible 44x44 min tap target as .social-links a::before, for the remaining small controls*/
+:is(.navbar_logo, .theme_toggle, .navbar_toggle, .footer_home_email, .footer_home_legal_link) {
+  position: relative;
+}
+
+:is(.navbar_logo, .theme_toggle, .navbar_toggle, .footer_home_email, .footer_home_legal_link)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(44px, 100%);
+  height: max(44px, 100%);
+  transform: translate(-50%, -50%);
 }
 
 .theme_toggle svg.icon-sun {
@@ -130,7 +152,6 @@
   color: var(--accent-color);
 
   white-space: nowrap; /*text stays in one line*/
-
 }
 
 .navbar_nav > a:focus-visible {
@@ -165,16 +186,26 @@
   height: 2px;
   border-radius: 2px;
   background-color: var(--accent-color);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /*morphs the 3 bars into an X once open*/
-.navbar_toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.navbar_toggle.open span:nth-child(2) { opacity: 0; }
-.navbar_toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.navbar_toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar_toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar_toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 .nav_link {
-  transition: text-decoration 0.8s ease-in-out, color 0.8s ease;
+  transition:
+    text-decoration 0.8s ease-in-out,
+    color 0.8s ease;
 }
 
 .nav_link.active {
@@ -187,17 +218,18 @@
 .lang_switch {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
   height: 64px;
-  padding-inline: var(--space-lg);
+  padding-inline: var(--space-md);
   font-family: 'Jost-Medium';
 }
 
+/*44px min width so EN/DE stay tappable on touch tablets, where the desktop navbar still shows*/
 .lang_link {
   display: flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
   height: 100%;
-  padding-inline: var(--space-2xs);
   color: var(--accent-color);
 }
 
@@ -210,10 +242,6 @@
   color: var(--accent-color);
   opacity: 0.5;
 }
-
-
-
-
 
 /*vertical-rectangle tab buttons pinned to the viewport edges either side of the project content*/
 .side-nav a {
@@ -229,7 +257,7 @@
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-family: 'Jost-Medium';
-  font-size: 14px;
+  font-size: var(--fs-small);
   letter-spacing: 0.5px;
   text-align: center;
   color: var(--accent-color);
@@ -238,7 +266,10 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px) saturate(160%);
   -webkit-backdrop-filter: blur(10px) saturate(160%);
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .side-nav a:hover {
@@ -264,17 +295,6 @@
   clip-path: inset(0 round 12px 0 0 12px);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*Social Links bottom left*/
 .social-links {
   display: flex;
@@ -282,7 +302,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  padding: 0 var(--space-xs) var(--space-3xl);
+  padding: 0 var(--space-xs) var(--page-gutter);
   gap: var(--space-lg);
   z-index: 1000;
 }
@@ -297,7 +317,7 @@
 /*invisible 44x44 min tap target (WCAG 2.5.5) centered on the icon — the icon itself stays
   small on purpose, this just pads the hit area without touching the visuals*/
 .social-links a::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -315,17 +335,16 @@
 }
 
 /*icons are baked-in muted-olive PNGs; brightness alone (same hue/sat) lands on the dark-mode shade*/
-html[data-theme="dark"] .social-links img {
+html[data-theme='dark'] .social-links img {
   filter: brightness(1.38);
 }
 
-
-.buttonLinkedin-hovered, 
-.buttonEmail-hovered { 
-  opacity: 0; 
+.buttonLinkedin-hovered,
+.buttonEmail-hovered {
+  opacity: 0;
 }
 
-.social-links a:hover .buttonLinkedin-hovered, 
+.social-links a:hover .buttonLinkedin-hovered,
 .social-links a:hover .buttonEmail-hovered {
   opacity: 1;
 }
@@ -353,7 +372,7 @@ html[data-theme="dark"] .social-links img {
 
 /*same invisible 44x44 min tap target as the LinkedIn/Email icons above it*/
 .accessibility_button::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -392,10 +411,7 @@ html[data-theme="dark"] .social-links img {
   overrides the UA's default centered dialog[open] positioning*/
 .a11y_panel {
   position: fixed;
-  left: 56px;
-  bottom: 16px;
-  top: auto;
-  right: auto;
+  inset: auto auto 16px 56px;
   margin: 0;
   width: 304px;
   max-width: calc(100vw - 72px);
@@ -405,7 +421,9 @@ html[data-theme="dark"] .social-links img {
   padding: 0;
   border-radius: 16px;
   background-color: var(--white);
-  color: var(--black); /*panel bg is always white regardless of site theme, but its text wasn't pinned — in dark mode it inherited body's white text, invisible on this white panel*/
+  color: var(
+    --black
+  ); /*panel bg is always white regardless of site theme, but its text wasn't pinned — in dark mode it inherited body's white text, invisible on this white panel*/
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   font-family: 'Jost-Medium';
 }
@@ -435,7 +453,9 @@ html[data-theme="dark"] .social-links img {
   line-height: 1;
   cursor: pointer;
   padding: 0;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .a11y_panel_close:hover {
@@ -487,7 +507,9 @@ html[data-theme="dark"] .social-links img {
   background-color: var(--white);
   cursor: pointer;
   font-family: 'Jost-Medium';
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .a11y_stepper_button:hover:not(:disabled) {
@@ -524,7 +546,9 @@ html[data-theme="dark"] .social-links img {
   font-size: 14px;
   background-color: var(--white);
   cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .a11y_select:hover {
@@ -541,7 +565,9 @@ html[data-theme="dark"] .social-links img {
   font-family: 'Jost-Medium';
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .a11y_reset_button:hover {
@@ -596,7 +622,10 @@ html.a11y-dyslexia-font .skill_name {
 
 html.a11y-big-cursor,
 html.a11y-big-cursor * {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cpath d='M3 2 L3 20 L8 16 L11 22 L14 21 L11 15 L17 15 Z' fill='black' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 4, auto !important;
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cpath d='M3 2 L3 20 L8 16 L11 22 L14 21 L11 15 L17 15 Z' fill='black' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E")
+      4 4,
+    auto !important;
 }
 
 /*trailing cursor, see main.js — mutually exclusive with Big Cursor above, enforced there.
@@ -615,7 +644,10 @@ html.a11y-big-cursor * {
   opacity: 0;
   isolation: isolate;
   mix-blend-mode: difference;
-  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    width 0.2s ease,
+    height 0.2s ease;
 }
 
 html.custom-cursor-active .custom_cursor.custom_cursor--visible {
@@ -748,23 +780,9 @@ html.a11y-text-2 {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hero_container {
   max-width: var(--max-width);
   margin-inline: auto; /*align to the center*/
-  align-items: top center;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
@@ -784,13 +802,15 @@ html.a11y-text-2 {
   flex: 0 0 705px; /*fixed box regardless of the typewriter's current (shorter) content, so its width can't shift the gap/image beside it*/
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md); /*heading → its text*/
 }
 
 .hero_buttons {
   display: flex;
   gap: var(--space-sm);
-  margin-top: calc(var(--space-2xl) - var(--space-sm)); /*hero_text's own gap already adds var(--space-sm); this tops it up to 48px*/
+  margin-top: calc(
+    var(--space-2xl) - var(--space-sm)
+  ); /*hero_text's own gap already adds var(--space-sm); this tops it up to 48px*/
 }
 
 .hero_buttons svg {
@@ -804,7 +824,7 @@ html.a11y-text-2 {
   align-items: center;
 }
 
-.hero_attention p{
+.hero_attention p {
   font-size: 18px;
   color: var(--accent-color);
 }
@@ -813,14 +833,12 @@ html.a11y-text-2 {
   width: 40px;
 }
 
-
-.hero_image{
-  width: 100%;       /* shrinks on mobile */
+.hero_image {
+  width: 100%; /* shrinks on mobile */
   max-width: 380px;
   height: auto;
   display: block;
 }
-
 
 .about_container {
   max-width: var(--max-width);
@@ -829,32 +847,50 @@ html.a11y-text-2 {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4xl);
+  /*intro ↔ skills grid are groups inside About: one step below the section padding*/
+  gap: var(--space-3xl);
   height: auto;
 }
 
 .about_content {
   display: flex;
   justify-content: space-between;
-  align-items: top left;
   flex-direction: column;
   gap: var(--space-lg);
 }
 
 .about_imageAndText {
   display: flex;
-  align-items: top left;
   flex-direction: row;
   gap: var(--space-2xl);
   /*animation on scroll:*/
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+/*reveal on scroll: hidden only once main.js can reveal it (html.js is set in the page head), so the text never depends on JS*/
+html.js .about_imageAndText:not(.is-visible) {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-/*animation on scroll:*/
+
 .about_imageAndText.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/*reduced motion (OS setting or the a11y panel toggle): show it straight away*/
+@media (prefers-reduced-motion: reduce) {
+  html.js .about_imageAndText:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+html.js.a11y-reduce-motion .about_imageAndText:not(.is-visible) {
+  opacity: 1;
+  transform: none;
 }
 
 .about_image {
@@ -866,7 +902,7 @@ html.a11y-text-2 {
   aspect-ratio: 454 / 365; /*matches both photos, so they fill the box instead of overflowing it*/
 }
 
-.about_image img{
+.about_image img {
   position: absolute;
   inset: 0;
   height: 100%;
@@ -874,21 +910,28 @@ html.a11y-text-2 {
   transition: opacity 3s ease-in-out;
 }
 
-.imageAbout{
+.imageAbout {
   animation: imageSwap 14s infinite;
   z-index: 2;
 }
 
-.imageAbout-other{
+.imageAbout-other {
   z-index: 1;
 }
 
 @keyframes imageSwap {
-  0%, 45% { opacity: 1; }  
-  55%, 95% { opacity: 0; } 
-  100% { opacity: 1; }     
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
 
 .about_text {
   display: flex;
@@ -946,15 +989,18 @@ html.a11y-text-2 {
   align-items: start;
   width: 100%;
   max-width: 1200px;
-  column-gap: var(--space-3xl);
-  row-gap: var(--space-4xl);
+  gap: var(--space-3xl); /*groups inside About: one step below the section padding*/
 }
 
-.skillsAndExperience, .educationAndLanguages {
+.skillsAndExperience,
+.educationAndLanguages {
   display: contents;
 }
 
-.skills, .experience, .education, .languages {
+.skills,
+.experience,
+.education,
+.languages {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -971,8 +1017,7 @@ html.a11y-text-2 {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: start;
-  column-gap: var(--space-3xl);
-  row-gap: var(--space-lg);
+  gap: var(--space-lg) var(--space-3xl);
   list-style: none;
   width: 100%;
 }
@@ -1011,7 +1056,7 @@ html.a11y-text-2 {
 
 .skill_name {
   font-family: 'Jost-Light';
-  font-size: calc(14px * var(--fs-scale));
+  font-size: var(--fs-small);
   line-height: 1.3;
   min-height: 2.6em;
 }
@@ -1033,12 +1078,13 @@ html.a11y-text-2 {
 
 .language_name {
   font-family: 'Jost-Regular';
-  font-size: calc(18px * var(--fs-scale));
+  font-size: var(--fs-body);
 }
 
 .language_level {
+  margin-top: var(--space-2xs); /*item name → its detail, same as .timeline_detail*/
   font-family: 'Jost-Light';
-  font-size: calc(14px * var(--fs-scale));
+  font-size: var(--fs-small);
 }
 
 .language_dots {
@@ -1078,7 +1124,7 @@ html.a11y-text-2 {
   text-align: right;
   white-space: nowrap;
   font-family: 'Jost-Light';
-  font-size: calc(14px * var(--fs-scale));
+  font-size: var(--fs-small);
 }
 
 .timeline_marker {
@@ -1126,50 +1172,53 @@ html.a11y-text-2 {
 
 .timeline_role {
   font-family: 'Jost-Regular';
-  font-size: calc(18px * var(--fs-scale));
+  font-size: var(--fs-body);
 }
 
 .timeline_content ul {
   margin-top: var(--space-2xs);
   padding-left: var(--space-md);
   font-family: 'Jost-Light';
-  font-size: calc(14px * var(--fs-scale));
+  font-size: var(--fs-small);
 }
 
 /*plain detail lines for timelines without a bulleted list, e.g. education*/
 .timeline_detail {
   margin-top: var(--space-2xs);
   font-family: 'Jost-Light';
-  font-size: calc(14px * var(--fs-scale));
+  font-size: var(--fs-small);
 }
-
 
 .projects_container {
   display: flex;
   flex-direction: column;
-  align-items: top center;
   justify-content: flex-start;
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
-  gap: var(--space-3xl);
+  /*heading → its cards: closer than the cards are to each other (proximity)*/
+  gap: var(--space-2xl);
   height: auto;
 }
 
-.projects_grid{
+.projects_grid {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4xl);
+  /*cards are groups inside the Projects section: one step below the 4xl section padding*/
+  gap: var(--space-3xl);
 }
 
 .project_card {
   display: flex;
   flex-direction: row;
-  width: 100%; 
+  width: 100%;
   justify-content: space-between; /* auto gap */
 }
 
-.project_text{
+.project_text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md); /*heading → its text (title touched its subtitle)*/
   min-width: 360px;
   max-width: 400px;
 }
@@ -1191,12 +1240,14 @@ html.a11y-text-2 {
   top: 0;
   right: 0;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover; /*fills the 16:9 card without stretching teasers of other proportions*/
   /*zoom starts immediately; color crossfade is delayed and slower so it reads as zoom-then-color*/
-  transition: transform 0.45s ease, opacity 0.8s ease-in-out 0.25s;
+  transition:
+    transform 0.45s ease,
+    opacity 0.8s ease-in-out 0.25s;
 }
 
-.color-img{
+.color-img {
   opacity: 0;
 }
 
@@ -1228,9 +1279,10 @@ html.touch .project_card.is-visible .color-img {
 
 /*a tap/scroll-past is briefer than a desktop hover, so touch gets a quicker version of the same reveal*/
 html.touch .project_image img {
-  transition: transform 0.3s ease, opacity 0.35s ease-in-out 0.1s;
+  transition:
+    transform 0.3s ease,
+    opacity 0.35s ease-in-out 0.1s;
 }
-
 
 .footer_home_container {
   display: flex;
@@ -1256,7 +1308,7 @@ html.touch .project_image img {
 .footer_home_text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md); /*heading → its text*/
 }
 
 .footer_home_heading,
@@ -1283,7 +1335,7 @@ html.touch .project_image img {
 }
 
 .footer_home_copyright {
-  font-size: calc(12px * var(--fs-scale));
+  font-size: var(--fs-label);
   font-family: 'Jost-Light';
   color: var(--white);
 }
@@ -1332,8 +1384,14 @@ html.touch .project_image img {
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-  transition: width 0.35s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  transition:
+    width 0.35s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .footer_home_backtotop svg {
@@ -1347,7 +1405,10 @@ html.touch .project_image img {
   overflow: hidden;
   max-width: 0;
   opacity: 0;
-  transition: max-width 0.35s ease, opacity 0.25s ease, margin-right 0.35s ease;
+  transition:
+    max-width 0.35s ease,
+    opacity 0.25s ease,
+    margin-right 0.35s ease;
 }
 
 .footer_home_backtotop:hover,
@@ -1357,7 +1418,9 @@ html.touch .project_image img {
   color: var(--white);
   background-color: rgba(255, 255, 255, 0.24);
   border-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .footer_home_backtotop:hover .footer_home_backtotop_label,
@@ -1366,7 +1429,6 @@ html.touch .project_image img {
   opacity: 1;
   margin-right: var(--space-xs);
 }
-
 
 /*  RESPONSIVE  */
 
@@ -1388,18 +1450,53 @@ html.touch .project_image img {
     flex: 0 1 260px;
     max-width: 260px;
   }
-}
 
-@media (max-width: 1024px) {
-  /*SIDE-NAV and SOCIAL-LINKS are position:fixed to the viewport edge, independent of the
-    container's own padding — shrink their footprint below var(--space-3xl) at each tier below
-    so they never sit on top of section content*/
-  .side-nav a {
-    width: 40px;
-    height: 150px;
-    font-size: 16px;
+  /*SIDE-NAV: an edge tab would be too small to tap on touch tablets and phones, so prev/next become
+    a 44px button row at the end of the content (the nav sits after <main>); it belongs to the content
+    above, so it sits closer to it (2xl, pulled up into the section's 4xl bottom padding) than to the footer (4xl)*/
+  .side-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-top: calc(var(--space-2xl) - var(--space-4xl));
+    padding: 0 var(--page-gutter) var(--space-4xl);
   }
 
+  .side-nav a {
+    position: static;
+    transform: none;
+    writing-mode: horizontal-tb;
+    width: auto;
+    height: auto;
+    min-height: 44px;
+    padding: 0 var(--space-md);
+    border: 1px solid var(--accent-color);
+    border-radius: 100px;
+    clip-path: none;
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    letter-spacing: normal;
+  }
+
+  /*outline-button hover like .btn-secondary, not the desktop tab's glass fill*/
+  .side-nav a:hover {
+    background-color: transparent;
+    border-color: var(--hover-text-color);
+  }
+
+  .side-nav_prev span {
+    transform: none;
+  }
+
+  /*narrower column gap so three skill columns fit longer labels (German, or "JavaScript" at 320px)*/
+  .skillsGrid {
+    column-gap: var(--space-md);
+  }
+
+  /*SOCIAL-LINKS are position:fixed to the viewport edge, independent of the container's own
+    padding — their footprint shrinks below var(--page-gutter) so they never sit on top of content*/
   .social-links {
     gap: var(--space-md);
     padding: 0 var(--space-xs) var(--space-2xl);
@@ -1409,6 +1506,17 @@ html.touch .project_image img {
   .social-links img {
     width: 24px;
     height: 24px;
+  }
+
+  /*shrinks with the icons so the column (8px inset + 26px) stays inside the 36-40px page gutter*/
+  .accessibility_button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .accessibility_icon {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -1449,7 +1557,7 @@ html.touch .project_image img {
 
   .navbar_nav > a {
     height: auto;
-    padding: var(--space-lg) var(--space-3xl);
+    padding: var(--space-lg) var(--page-gutter);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
@@ -1458,7 +1566,7 @@ html.touch .project_image img {
   .lang_switch {
     order: 1;
     height: auto;
-    padding: 0 var(--space-3xl);
+    padding: 0 var(--page-gutter);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
@@ -1473,25 +1581,9 @@ html.touch .project_image img {
     overflow: hidden;
   }
 
-  /*SIDE-NAV (project prev/next buttons): narrower than the section's own side padding
-    (--space-3xl) so there's a visible gap instead of text butting right up against them*/
-  .side-nav a {
-    width: 28px;
-    height: 120px;
-    font-size: 11px;
-    letter-spacing: 0.3px;
-  }
-
-  /*SOCIAL LINKS*/
+  /*SOCIAL LINKS (icon sizes come from the 1024px block)*/
   .social-links {
-    gap: var(--space-md);
-    padding: 0 var(--space-xs) var(--space-xl);
-  }
-
-  .social-links a,
-  .social-links img {
-    width: 24px;
-    height: 24px;
+    padding-bottom: var(--space-xl);
   }
 
   /*HERO*/
@@ -1546,10 +1638,6 @@ html.touch .project_image img {
 
   .language_item {
     flex-wrap: wrap;
-  }
-
-  .timeline_date {
-    font-size: calc(12px * var(--fs-scale));
   }
 
   /*PROJECTS GRID*/
@@ -1614,12 +1702,6 @@ html.touch .project_image img {
     max-width: 100%;
   }
 
-  .project_description {
-    flex-direction: column;
-  }
-
-  .keypoints,
-  .descriptionAndphoto,
   .titled_description {
     width: 100%;
   }
@@ -1638,8 +1720,11 @@ html.touch .project_image img {
   .footer_home_icon {
     height: 72px;
   }
+
+  /*long (German compound) words don't fit narrow columns; the page's lang attribute picks the dictionary*/
+  p,
+  li,
+  dd {
+    hyphens: auto;
+  }
 }
-
-
-
-

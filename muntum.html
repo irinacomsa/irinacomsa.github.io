@@ -36,6 +36,8 @@
     <script src="src/js/footer.js" defer></script>
     <script src="src/js/main.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/vendor/lenis.min.js" defer></script>
+    <script src="src/js/smooth-scroll.js" defer></script>
 
     <!--logo-->
     <link rel="icon" type="image/png" href="public/assets/images/favicon.png">
@@ -44,14 +46,6 @@
   <body>
     <!-- NAVBAR -->
     <div data-navbar data-home-href="index.html"></div>
-
-    
-    
-    
-    <nav class="side-nav" aria-label="Project navigation">
-      <a class="side-nav_prev" href="storytellingGame.html"><span>Previous Project</span></a>
-      <a class="side-nav_next" href="wildCraftFoundry.html">Next Project</a>
-    </nav>
 
     <!--  SOCIAL LINKS  -->
     <aside class="social-links" aria-label="Social media links">
@@ -84,42 +78,71 @@
       <div class="project_container">
 
         <div class="project_content">
-          <h1 class="project_title">MUNTUM Debate Club <br> | Webpage</h1>
-          <div class="project_description">
-            <div class="keypoints"> 
-              <div class="keypoint">
-                <p>What I Did</p>
-                  <ul>
+          <h1 class="project_title">MUNTUM Debate Club <span class="project_title_sub">Website redesign for a Munich student debate club</span></h1>
+
+          <div class="project_overview">
+            <dl class="project_facts">
+              <div class="project_fact">
+                <dt class="project_label">Context</dt>
+                <dd>Client project for MUNTUM Debate Club</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Year</dt>
+                <dd>2024</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Duration</dt>
+                <dd>4 months</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Team</dt>
+                <dd>TUDesign student club</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Methods</dt>
+                <dd><ul class="project_tags"><li>User journey</li><li>Empathy map</li><li>Competitor analysis</li><li>User interviews</li></ul></dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Tools</dt>
+                <dd><ul class="project_tags"><li>Figma</li></ul></dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Links</dt>
+                <dd><ul class="project_links">
+                    <li><a href="https://www.muntum.org/" target="_blank" rel="noopener noreferrer"><span class="project_link_end">muntum.org<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span><span class="visually-hidden">(opens in a new tab)</span></a></li>
+                  </ul></dd>
+              </div>
+            </dl>
+
+            <div class="project_main">
+              <div class="project_block">
+                <h2 class="project_label project_marker">What I Did</h2>
+                <ul class="project_steps">
                   <li>Created a website for our client MUNTUM along with TUDesign student club members using Figma</li>
                   <li>Participated in UI/UX workshops and other events organized by TUDesign</li>
-
-                  </ul>
-              </div>
-
-              <div class="keypoint">
-                <p>Visit the Website</p>
-                <ul>
-                  <li><a href="https://www.muntum.org/" target="_blank" rel="noopener noreferrer">https://www.muntum.org/</a></li>
                 </ul>
               </div>
-              <div class="titled_keypoint">
-                <p class="title">Duration</p>
-                <ul>
-                  <li>4 months</li>
-                </ul>
+
+              <div class="project_problem_solution">
+                <div class="project_block">
+                  <h2 class="project_label">The Challenge</h2>
+                  <p>The old website had an outdated design and lacked structure, which confused students who wanted to apply, and it had no mobile design.</p>
+                </div>
+                <div class="project_block">
+                  <h2 class="project_label">The Solution</h2>
+                  <p>A polished, more professional website, designed to attract more international students in Munich to join the debate club.</p>
+                </div>
+              </div>
             </div>
-            </div> <!--end keypoints-->
-
-            
-          </div> <!--end description-->
+          </div>
         </div><!--end content-->
 
         <div class="photos_project">
               <div class="Img1And2Project">
-                <img src="public/assets/images/project2_img1.webp" alt="Project MUNTUM Image 1"/>
-                <img src="public/assets/images/project2_img2.webp" alt="Project MUNTUM Image 2"/>
+                <img src="public/assets/images/project2_img1.webp" alt="MUNTUM website redesign: Events page with upcoming and past events"/>
+                <img src="public/assets/images/project2_img2.webp" alt="MUNTUM website redesign: home page with the application countdown, what MUNTUM is and the club's mission"/>
               </div>
-              <img src="public/assets/images/project2_img3.avif" alt="Project MUNTUM Image 3 Empathy Map"/>
+              <img src="public/assets/images/project2_img3.webp" alt="Empathy map of a student interested in joining a debate club: what they hear, see, say and do, think and feel, plus their pains and gains"/>
         </div>
       
 
@@ -127,6 +150,11 @@
     </section>
     
   </main> <!-- END OF MAIN WRAPPER -->
+
+    <nav class="side-nav" aria-label="Project navigation">
+      <a class="side-nav_prev" href="storytellingGame.html"><span>Previous Project</span></a>
+      <a class="side-nav_next" href="wildCraftFoundry.html">Next Project</a>
+    </nav>
 
 
     <!-- FOOTER -->

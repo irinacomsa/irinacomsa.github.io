@@ -37,6 +37,8 @@
     <script src="src/js/footer.js" defer></script>
     <script src="src/js/main.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/vendor/lenis.min.js" defer></script>
+    <script src="src/js/smooth-scroll.js" defer></script>
 
     <!--logo-->
     <link rel="icon" type="image/png" href="public/assets/images/favicon.png">
@@ -45,11 +47,6 @@
   <body>
     <!-- NAVBAR -->
     <div data-navbar data-home-href="index.html"></div>
-
-    <nav class="side-nav" aria-label="Project navigation">
-      <a class="side-nav_prev" href="papers.html"><span>Previous Project</span></a>
-      <a class="side-nav_next" href="storytellingGame.html">Next Project</a>
-    </nav>
 
     <!--  SOCIAL LINKS  -->
     <aside class="social-links" aria-label="Social media links">
@@ -82,43 +79,61 @@
       <div class="project_container">
 
         <div class="project_content">
-          <h1 class="project_title">Semantic Canvas <br> | computational notebook extension</h1>
+          <h1 class="project_title">Semantic Canvas <span class="project_title_sub">VS Code extension for computational notebooks</span></h1>
 
-          <div class="sc_text_stack">
-            <div class="titled_keypoint">
-              <p class="title">What I Did</p>
-              <ul>
-              <li>Built Semantic Canvas, a VS Code extension for computational notebooks, together with 2 teammates for the "Intelligent Systems" university practical</li>
-              <li>Designed it as a toolbox that speeds up navigating, documenting and maintaining notebooks, built around search as the core feature</li>
-              <li>Used: Figma, JavaScript, HTML, CSS, Python</li>
-              </ul>
+          <div class="project_overview">
+            <dl class="project_facts">
+              <div class="project_fact">
+                <dt class="project_label">Context</dt>
+                <dd>University practical &quot;Intelligent Systems&quot;</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Year</dt>
+                <dd>2026</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Duration</dt>
+                <dd>3 months</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Team</dt>
+                <dd>Me + 2 teammates</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Tools</dt>
+                <dd><ul class="project_tags"><li>Figma</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>Python</li></ul></dd>
+              </div>
+            </dl>
+
+            <div class="project_main">
+              <div class="project_block">
+                <h2 class="project_label project_marker">What I Did</h2>
+                <ul class="project_steps">
+                  <li>Built Semantic Canvas, a VS Code extension for computational notebooks, together with 2 teammates for the &quot;Intelligent Systems&quot; university practical</li>
+                  <li>Designed it as a toolbox that speeds up navigating, documenting and maintaining notebooks, built around search as the core feature</li>
+                </ul>
+              </div>
+
+              <div class="project_problem_solution">
+                <div class="project_block">
+                  <h2 class="project_label">The Challenge</h2>
+                  <p>Long notebooks are hard to navigate, documentation is often skipped because it slows down coding, and notebooks quietly accumulate dead, stale or duplicate cells over time.</p>
+                </div>
+                <div class="project_block">
+                  <h2 class="project_label">The Solution</h2>
+                  <p>Semantic Canvas adds a sidebar code overview, semantic and keyword search, AI-assisted (and human-editable) cell documentation, a sidebar/inline view toggle, code health flags, and configurable AI settings. Users can navigate, document and maintain notebooks without leaving their flow.</p>
+                </div>
+              </div>
             </div>
-
-            <div class="titled_keypoint">
-                  <p class="title">Duration</p>
-                  <ul>
-                    <li>3 months</li>
-                  </ul>
-              </div>
-
-            <div class="challenge_solution_row">
-              <div class="titled_keypoint">
-                <p class="title">The Challenge</p>
-                <p class="body">Long notebooks are hard to navigate, documentation is often skipped because it slows down coding, and notebooks quietly accumulate dead, stale or duplicate cells over time.</p>
-              </div>
-
-              <div class="titled_keypoint">
-                <p class="title">The Solution</p>
-                <p class="body">Semantic Canvas adds a sidebar code overview, semantic and keyword search, AI-assisted (and human-editable) cell documentation, a sidebar/inline view toggle, code health flags, and configurable AI settings. Users can navigate, document and maintain notebooks without leaving their flow.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="Img1And2Project">
-            <img src="public/assets/images/semanticSearch/technical architecture.png" alt="Technical architecture of the Semantic Canvas extension"/>
-            <img src="public/assets/images/semanticSearch/user workflow.png" alt="Sidebar and inline view workflow in Semantic Canvas"/>
           </div>
         </div><!--end content-->
+
+        <div class="photos_project">
+          <div class="Img1And2Project">
+            <img src="public/assets/images/semanticSearch/technical_architecture.webp" alt="Technical architecture of the Semantic Canvas extension"/>
+            <img src="public/assets/images/semanticSearch/user workflow.png" alt="Sidebar and inline view workflow in Semantic Canvas"/>
+          </div>
+        </div>
 
       </div><!--end container-->
     </section>
@@ -130,19 +145,21 @@
 
           <div class="feature_card">
             <div class="titled_keypoint">
-              <p class="title">1. Navigate & Search</p>
+              <p class="title">1. Navigate &amp; Search</p>
               <p class="body">A sidebar gives a clear overview of the notebook's structure, so users can jump to any cell in one click. Two search modes cover both cases: semantic search for top matches by meaning, and a keyword search with VS Code-native features like replace, replace all and match case.</p>
             </div>
-            <video
-              class="video_project sc_video_uniform"
-              data-src="public/assets/images/semanticSearch/search and navigate video.mov"
-              preload="none"
-              muted
-              loop
-              playsinline
-              disablepictureinpicture
-              aria-label="Navigate and search feature walkthrough"
-            ></video>
+            <figure>
+              <video
+                class="video_project sc_video_uniform"
+                data-src="public/assets/images/semanticSearch/search and navigate video.mov"
+                preload="none"
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+              ></video>
+              <figcaption class="visually-hidden">Navigate and search feature walkthrough</figcaption>
+            </figure>
           </div>
 
           <div class="feature_card">
@@ -150,16 +167,18 @@
               <p class="title">2. Work on Documentation</p>
               <p class="body">Each cell gets an automatically generated label and summary, which users can edit or regenerate with AI. AI-written content is marked with a yellow icon and human-edited content with a green one, so it's always clear how much of the documentation is AI vs. human.</p>
             </div>
-            <video
-              class="video_project sc_video_uniform"
-              data-src="public/assets/images/semanticSearch/document video.mov"
-              preload="none"
-              muted
-              loop
-              playsinline
-              disablepictureinpicture
-              aria-label="Documentation feature walkthrough"
-            ></video>
+            <figure>
+              <video
+                class="video_project sc_video_uniform"
+                data-src="public/assets/images/semanticSearch/document video.mov"
+                preload="none"
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+              ></video>
+              <figcaption class="visually-hidden">Documentation feature walkthrough</figcaption>
+            </figure>
           </div>
 
           <div class="feature_card">
@@ -185,6 +204,11 @@
     </section>
 
   </main> <!-- END OF MAIN WRAPPER -->
+
+    <nav class="side-nav" aria-label="Project navigation">
+      <a class="side-nav_prev" href="papers.html"><span>Previous Project</span></a>
+      <a class="side-nav_next" href="storytellingGame.html">Next Project</a>
+    </nav>
 
 
     <!-- FOOTER -->

@@ -36,6 +36,8 @@
     <script src="src/js/footer.js" defer></script>
     <script src="src/js/main.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/vendor/lenis.min.js" defer></script>
+    <script src="src/js/smooth-scroll.js" defer></script>
 
     <!--logo-->
     <link rel="icon" type="image/png" href="public/assets/images/favicon.png">
@@ -44,11 +46,6 @@
   <body>
     <!-- NAVBAR -->
     <div data-navbar data-home-href="index.de.html"></div>
-
-    <nav class="side-nav" aria-label="Projektnavigation">
-      <a class="side-nav_prev" href="semanticCanvas.de.html"><span>Vorheriges Projekt</span></a>
-      <a class="side-nav_next" href="muntum.de.html">Nächstes Projekt</a>
-    </nav>
 
     <!--  SOCIAL LINKS  -->
     <aside class="social-links" aria-label="Social-Media-Links">
@@ -81,57 +78,68 @@
       <div class="project_container">
 
         <div class="project_content">
-          <h1 class="project_title">Serious Game für gesellschaftliche Wirkung <br> | Bachelorarbeit LMU München x USI Lugano</h1>
-          <div class="project_description">
-            <div class="keypoints">
-              <div class="keypoint">
-                <p>Was ich gemacht habe</p>
+          <h1 class="project_title">Vorurteile spielerisch abbauen <span class="project_title_sub">Konzeption und Entwicklung eines Lernspiels für Grundschulkinder</span></h1>
 
-                  <ul>
+          <div class="project_overview">
+            <dl class="project_facts">
+              <div class="project_fact">
+                <dt class="project_label">Kontext</dt>
+                <dd>Bachelorarbeit (1,0) in Zusammenarbeit mit der LMU und der Università della Svizzera italiana</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Jahr</dt>
+                <dd>2024</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Dauer</dt>
+                <dd>5 Monate</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Schlagwörter</dt>
+                <dd><ul class="project_tags"><li>Child-Computer Interaction</li><li>Serious Games</li><li>Reflexives Design</li><li>Critical Design</li></ul></dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Tools</dt>
+                <dd><ul class="project_tags"><li>Figma</li><li>Unity (C#)</li></ul></dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Mitwirkende</dt>
+                <dd><ul class="project_links">
+                    <li><a href="https://www.um.informatik.uni-muenchen.de/personen/professoren/schmidt/index.html" target="_blank" rel="noopener noreferrer">Prof. Dr. Albrecht Schmidt (LMU <span class="project_link_end">München)<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span><span class="visually-hidden">(öffnet in neuem Tab)</span></a></li>
+                    <li><a href="https://search.usi.ch/en/people/95ecad00cca3b94274998db811a1beda/Landoni-Monica" target="_blank" rel="noopener noreferrer">Prof. Dr. Monica Landoni (USI <span class="project_link_end">Lugano)<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span><span class="visually-hidden">(öffnet in neuem Tab)</span></a></li>
+                    <li><a href="https://www.irenezanardi.com/" target="_blank" rel="noopener noreferrer">Doktorandin Irene Zanardi (USI <span class="project_link_end">Lugano)<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span><span class="visually-hidden">(öffnet in neuem Tab)</span></a></li>
+                    <li>Grundschulkinder</li>
+                  </ul></dd>
+              </div>
+            </dl>
+
+            <div class="project_main">
+              <div class="project_block">
+                <h2 class="project_label project_marker">Was ich gemacht habe</h2>
+                <ul class="project_steps">
                   <li>Ein Serious Game zum Abbau von Geschlechterstereotypen bei Kindern in Figma designt und in Unity C# entwickelt</li>
                   <li>Eine Critical Design Session durchgeführt, mit Unterstützung meiner Betreuerin Irene Zanardi sowie Prof. Dr. Monica Landoni und 4 weiteren Forscher*innen</li>
                   <li>Zwei Nutzer*innen-Sessions durchgeführt und ausgewertet und auf Basis der gesammelten Daten iteriert</li>
                   <li>Die Wirksamkeit des Spiels validiert, indem ich ein forschungsbasiertes Reflexions-Kodierschema entwickelt und eine Datenanalyse durchgeführt habe</li>
-                  </ul>
-              </div>
-
-              <div class="keypoint">
-                <p>Schlagwörter</p>
-                <ul>
-                  <li>Child-Computer Interaction </li>
-                  <li>Serious Games</li>
-                  <li>Reflexives Design & Critical Design </li>
                 </ul>
               </div>
-              <div class="keypoint">
-                <p>Mitwirkende</p>
-                <ul>
-                  <li><a class="collaborator_link" href="https://www.um.informatik.uni-muenchen.de/personen/professoren/schmidt/index.html" target="_blank" rel="noopener noreferrer">Prof. Dr. Albrecht Schmidt (LMU München)</a></li>
-                  <li><a class="collaborator_link" href="https://search.usi.ch/en/people/95ecad00cca3b94274998db811a1beda/Landoni-Monica" target="_blank" rel="noopener noreferrer">Prof. Dr. Monica Landoni (USI Lugano)</a></li>
-                  <li><a class="collaborator_link" href="https://www.irenezanardi.com/" target="_blank" rel="noopener noreferrer">Doktorandin Irene Zanardi (USI Lugano)</a></li>
-                  <li>Grundschulkinder </li>
-                </ul>
+
+              <div class="project_problem_solution">
+                <div class="project_block">
+                  <h2 class="project_label">Die Herausforderung</h2>
+                  <p>Sozio-politische digitale Tools sind trotz ihres großen Potenzials für sozialen Wandel ein stark unerforschtes Feld innerhalb der Child–Computer Interaction (CCI).</p>
+                </div>
+                <div class="project_block">
+                  <h2 class="project_label">Die Lösung</h2>
+                  <p>Das Spiel wurde in Figma gestaltet, in Unity (C#) gebaut und durch kontinuierliche Forschung, Gespräche mit CCI-Forscher*innen und zwei Nutzer*innen-Sessions mit 9 Grundschulkindern aus Lugano, Schweiz, iterativ verfeinert.</p>
+                </div>
               </div>
-              <div class="titled_keypoint">
-                <p class="title">Dauer</p>
-                <ul>
-                  <li>5 Monate</li>
-                </ul>
-            </div>
 
+              <figure class="project_figure">
+                <img src="public/assets/images/project1_img1.webp" alt="Spielszene: Die Eule fragt, ob man bereit ist, einen Rat zu geben, mit den Optionen, den endgültigen Rat zu geben oder mehr Informationen einzuholen"/>
+              </figure>
             </div>
-
-            <div class="descriptionAndphoto">
-              <p>Für meine Bachelorarbeit habe ich ein Serious Game für Kinder gestaltet und umgesetzt, das zur
-                Reflexion über Geschlechterstereotype anregt. Sozio-politische digitale Tools sind trotz ihres großen Potenzials für sozialen Wandel ein stark unerforschtes Feld innerhalb der Child–Computer Interaction (CCI).
-                Das Projekt entstand in Zusammenarbeit zwischen der LMU München und der USI Lugano (Erasmus-Universität)
-                und verband akademische Forschung mit praktischem Design und Entwicklung.
-                Das Spiel wurde in Figma gestaltet, in Unity (C#) gebaut und durch kontinuierliche Forschung, Gespräche mit CCI-Forscher*innen und zwei Nutzer*innen-Sessions mit 9 Grundschulkindern aus Lugano, Schweiz, iterativ verfeinert.
-              </p>
-              <img src="public/assets/images/project1_img1.webp" alt="Projekt 1 Bild 1"/>
-            </div>
-          
-          </div> <!--end description-->
+          </div>
         </div><!--end content-->
 
         <div class="photos_project">
@@ -141,12 +149,17 @@
               </div>
         <img src="public/assets/images/criticalDesignSession.webp" alt="Der Plan für die Critical Design Session"/>
         </div>
-
+      
 
       </div><!--end container-->
     </section>
-
+    
   </main> <!-- END OF MAIN WRAPPER -->
+
+    <nav class="side-nav" aria-label="Projektnavigation">
+      <a class="side-nav_prev" href="semanticCanvas.de.html"><span>Vorheriges Projekt</span></a>
+      <a class="side-nav_next" href="muntum.de.html">Nächstes Projekt</a>
+    </nav>
 
 
     <!-- FOOTER -->

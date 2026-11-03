@@ -9,8 +9,26 @@
   }
 
   const NAV_LABELS = {
-    en: { main: 'Main', home: 'Home', about: 'About', projects: 'Projects', contact: 'Contact' },
-    de: { main: 'Hauptmenü', home: 'Start', about: 'Über mich', projects: 'Projekte', contact: 'Kontakt' },
+    en: {
+      main: 'Main',
+      home: 'Home',
+      about: 'About',
+      projects: 'Projects',
+      contact: 'Contact',
+      theme: 'Toggle light/dark mode',
+      menu: 'Toggle navigation menu',
+      language: 'Language',
+    },
+    de: {
+      main: 'Hauptmenü',
+      home: 'Start',
+      about: 'Über mich',
+      projects: 'Projekte',
+      contact: 'Kontakt',
+      theme: 'Hell-/Dunkelmodus umschalten',
+      menu: 'Navigationsmenü umschalten',
+      language: 'Sprache',
+    },
   };
 
   //inlined (not <img>) so icon color follows currentColor/CSS instead of being baked into the file
@@ -25,13 +43,13 @@
       <div class="navbar_container">
 
         <div class="navbar_brand">
-          <a href="index.html" class="navbar_logo">Irina Comsa</a>
-          <button type="button" class="theme_toggle" aria-label="Toggle light/dark mode">
+          <a href="${lang === 'de' ? 'index.de.html' : 'index.html'}" class="navbar_logo">Irina Comsa</a>
+          <button type="button" class="theme_toggle" aria-label="${t.theme}">
             ${SUN_ICON}
           </button>
         </div>
 
-        <button type="button" class="navbar_toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <button type="button" class="navbar_toggle" aria-label="${t.menu}" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
 
@@ -39,7 +57,7 @@
           <a class="nav_link" href="${homeHref}" data-target="home">${t.home}</a>
           <a class="nav_link" href="${sectionPrefix}#about" data-target="about">${t.about}</a>
           <a class="nav_link" href="${sectionPrefix}#projects" data-target="projects">${t.projects}</a>
-          <div class="lang_switch" role="group" aria-label="Language">
+          <div class="lang_switch" role="group" aria-label="${t.language}">
             <a href="${enHref}" class="lang_link${lang === 'en' ? ' active' : ''}"${lang === 'en' ? ' aria-current="page"' : ''}>EN</a>
             <span class="lang_divider" aria-hidden="true">|</span>
             <a href="${deHref}" class="lang_link${lang === 'de' ? ' active' : ''}"${lang === 'de' ? ' aria-current="page"' : ''}>DE</a>
@@ -58,8 +76,8 @@
   const placeholder = document.querySelector('[data-navbar]');
   if (placeholder) {
     const homeHref = placeholder.dataset.homeHref || 'index.html';
-    //on index.html, About/Projects scroll in-page; elsewhere they need index.html#about or clicking does nothing
-    const sectionPrefix = homeHref === '#hero' ? '' : 'index.html';
+    //on the home page, About/Projects scroll in-page; elsewhere they need <home>#about (index.de.html on German pages)
+    const sectionPrefix = homeHref === '#hero' ? '' : homeHref;
     placeholder.outerHTML = navbarHTML(homeHref, sectionPrefix);
 
     //mobile hamburger toggle: opens/closes the dropdown, closes again once a link is picked
@@ -102,7 +120,9 @@
     const themeToggle = document.querySelector('.theme_toggle');
     if (themeToggle) {
       let theme = loadTheme();
-      const render = () => { themeToggle.innerHTML = theme === 'dark' ? MOON_ICON : SUN_ICON; };
+      const render = () => {
+        themeToggle.innerHTML = theme === 'dark' ? MOON_ICON : SUN_ICON;
+      };
       applyTheme(theme);
       render();
       themeToggle.addEventListener('click', () => {

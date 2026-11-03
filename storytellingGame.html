@@ -36,6 +36,8 @@
     <script src="src/js/footer.js" defer></script>
     <script src="src/js/main.js" defer></script>
     <script src="src/js/accessibility.js" defer></script>
+    <script src="src/js/vendor/lenis.min.js" defer></script>
+    <script src="src/js/smooth-scroll.js" defer></script>
 
     <!--logo-->
     <link rel="icon" type="image/png" href="public/assets/images/favicon.png">
@@ -44,14 +46,6 @@
   <body>
     <!-- NAVBAR -->
     <div data-navbar data-home-href="index.html"></div>
-
-    
-    
-    
-    <nav class="side-nav" aria-label="Project navigation">
-      <a class="side-nav_prev" href="semanticCanvas.html"><span>Previous Project</span></a>
-      <a class="side-nav_next" href="muntum.html">Next Project</a>
-    </nav>
 
     <!--  SOCIAL LINKS  -->
     <aside class="social-links" aria-label="Social media links">
@@ -84,56 +78,68 @@
       <div class="project_container">
 
         <div class="project_content">
-          <h1 class="project_title">Serious Game for Social Impact <br> | bachelor thesis LMU Munich x USI Lugano</h1>
-          <div class="project_description">
-            <div class="keypoints"> 
-              <div class="keypoint">
-                <p>What I Did</p>
-                
-                  <ul>
-                  <li>Designed in Figma & developed in Unity C# a serious game to mitigate gender stereotypes in young children</li>
+          <h1 class="project_title">Combating Biases through Play <span class="project_title_sub">Designing &amp; implementing an educational game for primary school children</span></h1>
+
+          <div class="project_overview">
+            <dl class="project_facts">
+              <div class="project_fact">
+                <dt class="project_label">Context</dt>
+                <dd>Bachelor thesis (1.0) in collaboration with LMU and Università della Svizzera italiana</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Year</dt>
+                <dd>2024</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Duration</dt>
+                <dd>5 months</dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Keywords</dt>
+                <dd><ul class="project_tags"><li>Child-Computer Interaction</li><li>Serious Games</li><li>Reflective Design</li><li>Critical Design</li></ul></dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Tools</dt>
+                <dd><ul class="project_tags"><li>Figma</li><li>Unity (C#)</li></ul></dd>
+              </div>
+              <div class="project_fact">
+                <dt class="project_label">Collaborators</dt>
+                <dd><ul class="project_links">
+                    <li><a href="https://www.um.informatik.uni-muenchen.de/personen/professoren/schmidt/index.html" target="_blank" rel="noopener noreferrer">Prof. Dr. Albrecht Schmidt (LMU <span class="project_link_end">Munich)<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span><span class="visually-hidden">(opens in a new tab)</span></a></li>
+                    <li><a href="https://search.usi.ch/en/people/95ecad00cca3b94274998db811a1beda/Landoni-Monica" target="_blank" rel="noopener noreferrer">Prof. Dr. Monica Landoni (USI <span class="project_link_end">Lugano)<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span><span class="visually-hidden">(opens in a new tab)</span></a></li>
+                    <li><a href="https://www.irenezanardi.com/" target="_blank" rel="noopener noreferrer">PhD student Irene Zanardi (USI <span class="project_link_end">Lugano)<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span><span class="visually-hidden">(opens in a new tab)</span></a></li>
+                    <li>Primary-school children</li>
+                  </ul></dd>
+              </div>
+            </dl>
+
+            <div class="project_main">
+              <div class="project_block">
+                <h2 class="project_label project_marker">What I Did</h2>
+                <ul class="project_steps">
+                  <li>Designed in Figma &amp; developed in Unity C# a serious game to mitigate gender stereotypes in young children</li>
                   <li>Conducted a Critical Design Session with the help of my supervisor, Irene Zanardi, along with Prof Dr. Monica Landoni and 4 other researchers</li>
                   <li>Conducted and analyzed two user sessions and iterated based on the collected data</li>
                   <li>Validated game effectiveness by designing a research-backed reflection coding scheme and conducting data analysis</li>
-                  </ul>
+                </ul>
               </div>
 
-              <div class="keypoint">
-                <p>Keywords</p>
-                <ul>
-                  <li>Child-Computer Interaction </li>
-                  <li>Serious Games</li>
-                  <li>Reflective Design & Critical Design </li>
-                </ul>
+              <div class="project_problem_solution">
+                <div class="project_block">
+                  <h2 class="project_label">The Challenge</h2>
+                  <p>Socio-political digital tools are a heavily underexplored area within Child–Computer Interaction (CCI) despite their high potential for social change.</p>
+                </div>
+                <div class="project_block">
+                  <h2 class="project_label">The Solution</h2>
+                  <p>The game was designed in Figma, built in Unity (C#) and iteratively refined through continuous research, discussions with CCI researchers and two user sessions with 9 primary-school children from Lugano, Switzerland.</p>
+                </div>
               </div>
-              <div class="keypoint">
-                <p>Collaborators</p>
-                <ul>
-                  <li><a class="collaborator_link" href="https://www.um.informatik.uni-muenchen.de/personen/professoren/schmidt/index.html" target="_blank" rel="noopener noreferrer">Prof. Dr. Albrecht Schmidt (LMU Munich)</a></li>
-                  <li><a class="collaborator_link" href="https://search.usi.ch/en/people/95ecad00cca3b94274998db811a1beda/Landoni-Monica" target="_blank" rel="noopener noreferrer">Prof. Dr. Monica Landoni (USI Lugano)</a></li>
-                  <li><a class="collaborator_link" href="https://www.irenezanardi.com/" target="_blank" rel="noopener noreferrer">PhD student Irene Zanardi (USI Lugano)</a></li>
-                  <li>Primary-school children </li>
-                </ul>
-              </div>
-              <div class="titled_keypoint">
-                <p class="title">Duration</p>
-                <ul>
-                  <li>5 months</li>
-                </ul>
-            </div>
-            </div>
 
-            <div class="descriptionAndphoto">
-              <p>For my bachelor thesis, I designed and implemented a serious game for children that encourages 
-                reflection on gender stereotypes. Socio-political digital tools are a heavily underexplored area within Child–Computer Interaction (CCI) despite their high potential for social change.
-                Developed as part of a collaboration between LMU Munich and USI Lugano (Erasmus university), 
-                the project combined academic research with hands-on design and development.
-                The game was designed in Figma, built in Unity (C#) and iteratively refined through continuous research, discussions with CCI researchers and two user sessions with 9 primary-school children from Lugano, Switzerland.
-              </p>
-              <img src="public/assets/images/project1_img1.webp" alt="Project1 image 1"/>
+              <figure class="project_figure">
+                <img src="public/assets/images/project1_img1.webp" alt="Game scene: the owl guide asks whether the player is ready to give advice, with the options to give final advice or ask for more information"/>
+              </figure>
             </div>
-            
-          </div> <!--end description-->
+          </div>
         </div><!--end content-->
 
         <div class="photos_project">
@@ -149,6 +155,11 @@
     </section>
     
   </main> <!-- END OF MAIN WRAPPER -->
+
+    <nav class="side-nav" aria-label="Project navigation">
+      <a class="side-nav_prev" href="semanticCanvas.html"><span>Previous Project</span></a>
+      <a class="side-nav_next" href="muntum.html">Next Project</a>
+    </nav>
 
 
     <!-- FOOTER -->

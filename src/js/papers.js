@@ -25,7 +25,8 @@
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const label = root.lang === 'de' ? 'Lupe' : 'Magnifier';
   //redrawn on a 24px grid so the thin ring stays crisp at button size
-  const ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5" stroke-width="2.25"/><path d="M15 15l5.25 5.25" stroke-width="3.5"/></svg>';
+  const ICON =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5" stroke-width="2.25"/><path d="M15 15l5.25 5.25" stroke-width="3.5"/></svg>';
   const loupes = [];
 
   previews.forEach((preview) => {
